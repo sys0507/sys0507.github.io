@@ -1,0 +1,19 @@
+# Two halves of the toolkit. Keep each item short; order = priority.
+computer:
+  - area: "Machine learning"
+    items: "PyTorch (Transformers, attention, encoder–decoder), protein language models (ESM2), scikit-learn, XGBoost"
+  - area: "LLM applications"
+    items: "Claude Agent SDK, Model Context Protocol, agent skills, LangChain / LangGraph, retrieval-augmented generation"
+  - area: "Bioinformatics"
+    items: "scRNA-seq and scTCR-seq (Scanpy, Seurat, Cell Ranger), immune repertoires (MiXCR), bulk RNA-seq, pseudotime and RNA velocity, cell–cell communication"
+  - area: "Engineering"
+    items: "Python, R, TypeScript, React, Node.js, Flask, Linux, Git, SLURM and HPC, spec-driven and test-driven development"
+bench:
+  - area: "T-cell engineering"
+    items: "CAR-T and TCR-T engineering, antigen-specific TCR screening, iPSC and HSC differentiation into T cells"
+  - area: "Cellular immunology"
+    items: "Primary T, NK, iNKT and macrophage culture, multicolor flow cytometry, cytotoxicity assays (xCELLigence), ELISA"
+  - area: "Molecular biology"
+    items: "CRISPR/Cas9 knock-in, lentivirus production and transduction, Gibson cloning, PCR, Western blot"
+  - area: "Biophysics"
+    items: "Single-molecule and super-resolution microscopy, nanopatterned surfaces, optical manipulation"

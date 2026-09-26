@@ -1,0 +1,21 @@
+---
+layout: page
+title: "Notebook"
+heading: "Notebook"
+description: "Explainers, short videos, and working notes by Miao Li on statistics, machine learning, transformers, and immunology."
+lede: "Short explainers, videos, and working notes. Written for curious scientists, whichever side of the bench they sit on."
+---
+<div class="filter-bar" role="group" aria-label="Filter posts" data-filter-group="posts">
+  <button type="button" data-filter="all" aria-pressed="true">All <span class="count">{{ site.posts | size }}</span></button>
+  <button type="button" data-filter="article" aria-pressed="false">Articles</button>
+  <button type="button" data-filter="video" aria-pressed="false">Videos</button>
+  <button type="button" data-filter="note" aria-pressed="false">Notes</button>
+  <a class="filter-aside" href="{{ '/feed.xml' | relative_url }}">Subscribe via RSS</a>
+</div>
+<p class="filter-status visually-hidden" aria-live="polite" data-filter-status="posts"></p>
+{%- if site.posts.size > 0 %}
+<ol class="post-list post-list--page" role="list" data-filter-target="posts">
+  {%- for po in site.posts %}{% include post-item.html post=po level=2 %}{% endfor %}
+</ol>
+{%- endif %}
+<p class="empty" data-filter-empty="posts" hidden>Nothing here yet. Try another filter, or subscribe via <a href="{{ '/feed.xml' | relative_url }}">RSS</a> to get the next one.</p>

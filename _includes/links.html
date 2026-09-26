@@ -1,0 +1,7 @@
+{%- comment -%} Profile links row. Include with: {% include links.html %} {%- endcomment -%}
+<ul class="profile-links" role="list">
+  {%- if site.links.scholar %}<li><a href="{{ site.links.scholar }}" rel="me">Google Scholar</a></li>{% endif %}
+  {%- if site.links.github %}<li><a href="{{ site.links.github }}" rel="me">GitHub</a></li>{% endif %}
+  {%- if site.links.linkedin %}<li><a href="{{ site.links.linkedin }}" rel="me">LinkedIn</a></li>{% endif %}
+  {%- if site.links.youtube != "" and site.links.youtube %}<li><a href="{{ site.links.youtube }}" rel="me">YouTube</a></li>{% endif %}
+</ul>

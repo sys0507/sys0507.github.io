@@ -1,0 +1,25 @@
+{%- assign v = include.video -%}
+<figure class="video">
+  {%- if v.youtube and v.youtube != "" %}
+  <div class="video-frame">
+    <iframe src="https://www.youtube-nocookie.com/embed/{{ v.youtube }}?rel=0" title="{{ include.title | escape }}" loading="lazy"
+      allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+  </div>
+  {%- elsif v.bilibili and v.bilibili != "" %}
+  <div class="video-frame">
+    <iframe src="https://player.bilibili.com/player.html?bvid={{ v.bilibili }}&amp;autoplay=0&amp;high_quality=1" title="{{ include.title | escape }}" loading="lazy" allowfullscreen></iframe>
+  </div>
+  {%- elsif v.src and v.src != "" %}
+  <div class="video-frame">
+    <video controls preload="metadata" playsinline {% if v.poster %}poster="{{ v.poster | relative_url }}"{% endif %}>
+      <source src="{{ v.src | relative_url }}" type="video/mp4">
+      {%- if v.captions %}<track kind="captions" src="{{ v.captions | relative_url }}" srclang="en" label="English" default>{% endif %}
+    </video>
+  </div>
+  {%- else %}
+  <div class="video-frame video-frame--empty">
+    <p>Video coming soon. Add its YouTube ID as <code>video.youtube</code> in this post’s front matter.</p>
+  </div>
+  {%- endif %}
+  {%- if v.caption %}<figcaption>{{ v.caption }}</figcaption>{% endif %}
+</figure>

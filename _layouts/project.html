@@ -1,0 +1,52 @@
+---
+layout: default
+body_class: project-page
+---
+<article class="wrap project channel-{{ page.channel }}">
+  <header class="project-head">
+    <p class="post-kicker"><a href="{{ '/projects/' | relative_url }}">Projects</a> <span aria-hidden="true">/</span> <span class="channel-tag channel-{{ page.channel }}">{% case page.channel %}{% when 'code' %}Code{% when 'merge' %}Research + code{% else %}Research{% endcase %}</span></p>
+    <h1>{{ page.title }}</h1>
+    <p class="project-subtitle">{{ page.lede | smartify }}</p>
+  </header>
+
+  <dl class="facts">
+    <div><dt>When</dt><dd>{{ page.period }}</dd></div>
+    <div><dt>My role</dt><dd>{{ page.role }}</dd></div>
+    <div><dt>Built with</dt><dd>{{ page.stack | join: ', ' }}</dd></div>
+    {%- if page.status %}<div><dt>Status</dt><dd>{{ page.status }}</dd></div>{% endif %}
+  </dl>
+
+  <figure class="plate plate--wide">
+    <img src="{{ page.cover | relative_url }}" alt="{{ page.cover_alt | escape }}" width="640" height="400" fetchpriority="high">
+    {%- if page.cover_caption %}<figcaption>{{ page.cover_caption }}</figcaption>{% endif %}
+  </figure>
+
+  {%- if page.outcomes %}
+  <ul class="outcomes outcomes--big" role="list">
+    {%- for o in page.outcomes %}<li><strong>{{ o.value }}</strong> <span>{{ o.label }}</span></li>{% endfor %}
+  </ul>
+  {%- endif %}
+
+  <div class="prose">
+    {{ content }}
+  </div>
+
+  <p class="project-links project-links--end">
+    {%- if page.repo %}<a class="btn" href="{{ page.repo }}">Source on GitHub</a>{% endif -%}
+    {%- if page.paper %}<a class="btn" href="{{ page.paper }}">Read the paper</a>{% endif -%}
+    {%- if page.demo %}<a class="btn btn--ghost" href="{{ page.demo }}">{{ page.demo_label | default: 'Live demo' }}</a>{% endif -%}
+    <a class="btn btn--ghost" href="{{ '/projects/' | relative_url }}">All projects</a>
+  </p>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": {% if page.repo %}"SoftwareSourceCode"{% else %}"CreativeWork"{% endif %},
+    "name": {{ page.title | jsonify }},
+    "description": {{ page.lede | jsonify }},
+    "author": { "@type": "Person", "name": {{ site.author.name | jsonify }}, "url": {{ site.url | append: '/' | jsonify }} },
+    {%- if page.repo %}"codeRepository": {{ page.repo | jsonify }},{% endif %}
+    "url": {{ page.url | absolute_url | jsonify }}
+  }
+  </script>
+</article>

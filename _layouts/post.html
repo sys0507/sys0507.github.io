@@ -1,0 +1,36 @@
+---
+layout: default
+body_class: post-page
+---
+{%- assign fmt = page.format | default: 'article' -%}
+<article class="wrap post" itemscope itemtype="https://schema.org/BlogPosting">
+  <header class="post-head">
+    <p class="post-kicker">
+      <a href="{{ '/notebook/' | relative_url }}">Notebook</a>
+      <span aria-hidden="true">/</span>
+      <span class="format-{{ fmt }}">{% case fmt %}{% when 'video' %}Video{% when 'note' %}Note{% else %}Article{% endcase %}</span>
+    </p>
+    <h1 itemprop="headline">{{ page.title | smartify }}</h1>
+    {%- if page.description %}<p class="post-standfirst">{{ page.description | smartify }}</p>{% endif %}
+    <p class="post-byline muted">
+      <span itemprop="author">{{ site.author.name }}</span>,
+      <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%B %-d, %Y" }}</time>{% if fmt == 'article' %}, {{ content | number_of_words | divided_by: 220 | plus: 1 }} min read{% endif %}{% if fmt == 'video' and page.video.duration %}, {{ page.video.duration }}{% endif %}
+    </p>
+  </header>
+
+  {%- if fmt == 'video' %}{% include video.html video=page.video title=page.title %}{% endif %}
+
+  <div class="prose" itemprop="articleBody">
+    {{ content }}
+  </div>
+
+  <footer class="post-foot">
+    {%- if page.tags.size > 0 %}
+    <p class="post-tags"><span class="visually-hidden">Tags:</span>{% for t in page.tags %}<span class="tag">{{ t }}</span>{% endfor %}</p>
+    {%- endif %}
+    <nav class="post-nav" aria-label="More from the notebook">
+      {%- if page.previous %}<a class="prev" href="{{ page.previous.url | relative_url }}"><span class="muted">Older</span>{{ page.previous.title | smartify }}</a>{% else %}<span></span>{% endif %}
+      {%- if page.next %}<a class="next" href="{{ page.next.url | relative_url }}"><span class="muted">Newer</span>{{ page.next.title | smartify }}</a>{% endif %}
+    </nav>
+  </footer>
+</article>

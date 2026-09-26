@@ -1,0 +1,230 @@
+# ---------------------------------------------------------------
+# Publications — newest first. Adding a paper = adding one block.
+#
+#   role:     first | co-first | contributing
+#   kind:     article | review | perspective
+#   topics:   any of  cell-therapy, imaging   (drive the filters)
+#   selected: true → also shown on the home page (keep 3–4)
+#   image:    abstract graphic (SVG/PNG/WebP, 16:10 works best)
+#   summary:  one or two plain-English sentences for non-specialists
+#   "M. Li" in `authors` is highlighted automatically.
+# ---------------------------------------------------------------
+
+- key: sttt-2026
+  title: "Spatiotemporal profiling reveals distinct dynamics and checkpoint regulations of CAR-T and CAR-NKT cells against solid tumors"
+  authors: "Y.-R. Li*, M. Li*, Y. Chen, H. Leng, Y. Zhu, … L. Yang"
+  venue: "Signal Transduction and Targeted Therapy"
+  year: 2026
+  doi: "10.1038/s41392-026-02602-x"
+  url: "https://www.nature.com/articles/s41392-026-02602-x"
+  role: co-first
+  kind: article
+  topics: [cell-therapy]
+  oa: true
+  selected: true
+  image: /assets/img/pubs/sttt-2026.svg
+  image_alt: "CAR-T and CAR-NKT cells compared over time: CAR-NKT cells infiltrate tumors more and persist longer, and each pairs with a different checkpoint blockade."
+  summary: >-
+    We followed conventional CAR-T cells and stem cell-derived CAR-NKT cells across tissues and time in solid-tumor
+    models. CAR-NKT cells homed into tumors better and persisted longer, and the two products responded to different
+    checkpoint blockades: TIGIT for CAR-T, CD96 for CAR-NKT.
+
+- key: frontiers-2025
+  title: "Differential regulation of Treg stability in human naïve and effector Treg subsets by TGFβ-signaling via ARKADIA-SKI axis"
+  authors: "F. Yang, A. Yanes, M. Li, P. Heizer, … Z. Guo"
+  venue: "Frontiers in Immunology"
+  year: 2025
+  citation: "16"
+  doi: "10.3389/fimmu.2025.1636434"
+  role: contributing
+  kind: article
+  topics: [cell-therapy]
+  oa: true
+  image: /assets/img/pubs/frontiers-2025.svg
+  image_alt: "TGF-beta signaling stabilizes regulatory T cells; SKI brakes the pathway and ARKADIA degrades SKI."
+  summary: >-
+    TGFβ signaling keeps human regulatory T cells stable, and naïve and effector subsets depend on it differently.
+    Degrading the brake protein SKI with the E3 ligase ARKADIA made Tregs more stable and more suppressive — a lever
+    for Treg cell therapy.
+
+- key: med-2025
+  title: "Overcoming ovarian cancer resistance and evasion to CAR-T cell therapy by harnessing allogeneic CAR-NKT cells"
+  authors: "Y.-R. Li, Z. Li, Y. Zhu, M. Li, Y. Chen, et al."
+  venue: "Med"
+  year: 2025
+  citation: "6(10)"
+  doi: "10.1016/j.medj.2025.100804"
+  role: contributing
+  kind: article
+  topics: [cell-therapy]
+  image: /assets/img/pubs/med-2025.svg
+  image_alt: "An allogeneic CAR-NKT cell attacks ovarian tumor cells through its CAR and NK receptors and suppressive macrophages through its TCR."
+  summary: >-
+    Off-the-shelf CAR-NKT cells attacked ovarian tumors and their suppressive microenvironment through several
+    mechanisms at once, outperforming conventional CAR-T cells in preclinical models with a favorable safety profile.
+
+- key: cell-2025
+  title: "Serotonin transporter inhibits antitumor immunity through regulating the intratumoral serotonin axis"
+  authors: "B. Li, J. Elsten-Brown, M. Li, E. Zhu, et al."
+  venue: "Cell"
+  year: 2025
+  citation: "188(14):3823–3842"
+  doi: "10.1016/j.cell.2025.04.032"
+  role: contributing
+  kind: article
+  topics: [cell-therapy]
+  selected: true
+  image: /assets/img/pubs/cell-2025.svg
+  image_alt: "The serotonin transporter SERT on CD8 T cells clears serotonin; SSRIs block it and combine with PD-1 blockade to slow tumor growth."
+  summary: >-
+    Tumor-infiltrating CD8 T cells switch on the serotonin transporter SERT, which acts like an immune checkpoint.
+    Widely prescribed antidepressants (SSRIs) that block it boosted anti-tumor T cells and worked together with PD-1
+    blockade in mouse models.
+
+- key: nbt-2025
+  title: "Generation of allogeneic CAR-NKT cells from hematopoietic stem and progenitor cells using a clinically guided culture method"
+  authors: "Y.-R. Li, Y. Zhou, J. Yu, Y. J. Kim, M. Li, et al."
+  venue: "Nature Biotechnology"
+  year: 2025
+  citation: "43(3):329–344"
+  doi: "10.1038/s41587-024-02226-y"
+  role: contributing
+  kind: article
+  topics: [cell-therapy]
+  oa: true
+  selected: true
+  image: /assets/img/pubs/nbt-2025.svg
+  image_alt: "Manufacturing flow from stem and progenitor cells, through gene engineering and feeder-free culture, to off-the-shelf CAR-NKT cells."
+  summary: >-
+    A feeder-free, clinically guided process turns blood stem and progenitor cells into IL-15-enhanced allogeneic
+    CAR-NKT cells at high yield and purity, with anti-tumor activity across several cancer models.
+
+- key: csc-2023
+  title: "Advancing cell-based cancer immunotherapy through stem cell engineering"
+  authors: "Y.-R. Li, Z. S. Dunn, Y. Yu, M. Li, P. Wang, L. Yang"
+  venue: "Cell Stem Cell"
+  year: 2023
+  citation: "30"
+  doi: "10.1016/j.stem.2023.02.009"
+  role: contributing
+  kind: review
+  topics: [cell-therapy]
+  image: /assets/img/pubs/csc-2023.svg
+  image_alt: "Stem cell sources are engineered and differentiated into T, NK, iNKT cells and macrophages for the clinic."
+  summary: >-
+    A review of how engineered stem cells can supply scalable, off-the-shelf immune-cell therapies: cell sources,
+    gene engineering, manufacturing, therapeutic platforms, and clinical trials.
+
+- key: cancers-2022
+  title: "Engineering induced pluripotent stem cells for cancer immunotherapy"
+  authors: "Y. Zhou*, M. Li*, K. Zhou, J. Brown, T. Tsao, X. Cen, T. Husman, A. Bajpai, Z. S. Dunn, L. Yang"
+  venue: "Cancers"
+  year: 2022
+  citation: "14(9):2266"
+  doi: "10.3390/cancers14092266"
+  role: co-first
+  kind: review
+  topics: [cell-therapy]
+  oa: true
+  image: /assets/img/pubs/cancers-2022.svg
+  image_alt: "An iPSC at the center differentiates into T, NK, iNKT, gamma-delta T cells and macrophages."
+  summary: >-
+    A review of how induced pluripotent stem cells can be gene engineered and differentiated into T, NK, iNKT, γδ T
+    cells and macrophages to make universal, off-the-shelf cancer immunotherapies.
+
+- key: jpcb-2022
+  title: "Spatial organization of Dectin-1 and TLR2 during synergistic crosstalk revealed by super-resolution imaging"
+  authors: "M. Li, C. Vultorius, M. Bethi, Y. Yu"
+  venue: "The Journal of Physical Chemistry B"
+  year: 2022
+  citation: "126(31):5781–5792"
+  doi: "10.1021/acs.jpcb.2c03557"
+  role: first
+  kind: article
+  topics: [imaging]
+  image: /assets/img/pubs/jpcb-2022.svg
+  image_alt: "Two-color super-resolution image: Dectin-1 and TLR2 nanoclusters partially overlap on a macrophage membrane."
+  summary: >-
+    Two-color single-molecule super-resolution imaging showed that Dectin-1 and TLR2 form separate nanoclusters that
+    partially overlap during synergistic signaling, rather than mixing into one complex.
+
+- key: bpj-2022
+  title: "Immobile ligands enhance FcγR-TLR2/1 crosstalk by promoting interface overlap of receptor clusters"
+  authors: "M. Li, S. Lee, M. Zahedian, C. Ding, J. Yan, Y. Yu"
+  venue: "Biophysical Journal"
+  year: 2022
+  doi: "10.1016/j.bpj.2022.02.010"
+  role: first
+  kind: article
+  topics: [imaging]
+  image: /assets/img/pubs/bpj-2022.svg
+  image_alt: "Receptor nanoclusters stay apart with mobile ligands and overlap at their interface with immobile ligands, giving a stronger signal."
+  summary: >-
+    When ligands on a model pathogen membrane can't move, FcγR and TLR2/1 nanoclusters overlap more at their
+    interface, and macrophages mount a stronger inflammatory response — a physical way to tune immunity.
+
+- key: jcs-2021
+  title: "Innate immune receptor clustering and its role in immune regulation"
+  authors: "M. Li, Y. Yu"
+  venue: "Journal of Cell Science"
+  year: 2021
+  citation: "134(4)"
+  doi: "10.1242/jcs.249318"
+  role: first
+  kind: review
+  topics: [imaging]
+  image: /assets/img/pubs/jcs-2021.svg
+  image_alt: "Different innate immune receptors form clusters in the cell membrane beneath a pathogen surface."
+  summary: >-
+    A review of how innate immune receptors assemble into nano- and micro-scale clusters, and how that spatial
+    organization shapes pathogen detection and downstream signaling.
+
+- key: sciadv-2020
+  title: "Macrophage activation on “phagocytic synapse” arrays: Spacing of nanoclustered ligands directs TLR1/2 signaling with an intrinsic limit"
+  authors: "M. Li, H. Wang, W. Li, X. G. Xu, Y. Yu"
+  venue: "Science Advances"
+  year: 2020
+  citation: "6:eabc8482"
+  doi: "10.1126/sciadv.abc8482"
+  role: first
+  kind: article
+  topics: [imaging]
+  oa: true
+  selected: true
+  image: /assets/img/pubs/sciadv-2020.svg
+  image_alt: "Nanoarrays with ligand clusters at three spacings, and a response curve that rises as spacing shrinks until it plateaus."
+  summary: >-
+    We built nanoarrays that mimic the contact zone between a macrophage and a microbe. Moving ligand clusters closer
+    together brought receptor clusters together and increased inflammatory signaling — up to an intrinsic ceiling.
+
+- key: acsnano-2019
+  title: "Tracking single molecules in biomembranes: Is seeing always believing?"
+  authors: "Y. Yu, M. Li, Y. Yu"
+  venue: "ACS Nano"
+  year: 2019
+  citation: "13:10860–10868"
+  doi: "10.1021/acsnano.9b07445"
+  role: contributing
+  kind: perspective
+  topics: [imaging]
+  image: /assets/img/pubs/acsnano-2019.svg
+  image_alt: "A freely diffusing single-particle trajectory next to a confined one that may be a probe artifact."
+  summary: >-
+    A perspective on single-particle tracking in cell membranes: what nanoparticle probes have revealed, and how
+    probe size, labeling, and analysis choices can produce misleading trajectories.
+
+- key: nanolett-2015
+  title: "Optical injection of gold nanoparticles into living cells"
+  authors: "M. Li, T. Lohmüller, J. Feldmann"
+  venue: "Nano Letters"
+  year: 2015
+  citation: "15(1):770–775"
+  doi: "10.1021/nl504497m"
+  role: first
+  kind: article
+  topics: [imaging]
+  image: /assets/img/pubs/nanolett-2015.svg
+  image_alt: "A laser beam places a gold nanoparticle on a living cell, then injects it with plasmonic heating and optical force."
+  summary: >-
+    A continuous-wave laser first places single gold nanoparticles onto living cells, then injects them through
+    plasmonic heating and optical force — with more than 70% of cells surviving.

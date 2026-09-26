@@ -1,0 +1,87 @@
+# ---------------------------------------------------------------
+#  Site settings — most day-to-day edits happen in _data/ and
+#  _posts/, not here. See README.md for the maintenance guide.
+# ---------------------------------------------------------------
+
+title: "Miao Li, Ph.D."
+tagline: "Computational immunology and AI agents"
+description: >-
+  Miao Li, Ph.D. is a Senior Scientist building AI agents, protein language
+  models, and single-cell pipelines for T-cell receptor discovery and cell therapy.
+url: "https://sys0507.github.io"   # change if you use a custom domain
+baseurl: ""
+lang: en
+
+author:
+  name: "Miao Li"
+  honorific: "Ph.D."
+  job_title: "Senior Scientist"
+  affiliation: "AstraZeneca"
+  location: "Gaithersburg, Maryland"
+  # A personal address is usually better than a work address on a public site.
+  email: "miao.li6908@gmail.com"
+
+links:
+  scholar: "https://scholar.google.com/citations?user=JRzxS2wAAAAJ&hl=en"
+  github: "https://github.com/sys0507"
+  linkedin: "https://www.linkedin.com/in/miao-li-02886448/"
+  youtube: ""           # add your channel URL once you publish videos
+
+cv_pdf: "/assets/cv/Miao_Li_CV.pdf"
+
+# One sentence shown in the contact section. Leave empty to hide it.
+contact_note: >-
+  I'm glad to talk about collaborations, invited talks, and roles in
+  computational immunology, AI/ML, and clinical data science.
+
+# ---------- SEO (jekyll-seo-tag) ----------
+image: /assets/img/og-image.png
+twitter:
+  card: summary_large_image
+social:
+  name: "Miao Li"
+  links:
+    - "https://scholar.google.com/citations?user=JRzxS2wAAAAJ&hl=en"
+    - "https://github.com/sys0507"
+    - "https://www.linkedin.com/in/miao-li-02886448/"
+# google_site_verification: ""   # paste the token from Google Search Console
+
+# ---------- content ----------
+collections:
+  projects:
+    output: true
+    permalink: /projects/:name/
+
+permalink: /notebook/:year/:title/
+
+defaults:
+  - scope: { path: "", type: posts }
+    values: { layout: post }
+  - scope: { path: "", type: projects }
+    values: { layout: project }
+  - scope: { path: "" }
+    values: { image: /assets/img/og-image.png }
+
+markdown: kramdown
+highlighter: rouge
+kramdown:
+  input: GFM
+  hard_wrap: false
+  syntax_highlighter: rouge
+  math_engine: mathjax     # $$…$$ is rendered by KaTeX on pages with `math: true`
+
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-feed
+
+feed:
+  path: feed.xml
+
+exclude:
+  - README.md
+  - docs/
+  - Gemfile
+  - Gemfile.lock
+  - vendor/
+  - .jekyll-cache/

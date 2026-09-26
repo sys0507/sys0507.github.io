@@ -1,0 +1,30 @@
+---
+layout: page
+title: "Research and publications"
+heading: "Research"
+description: "Publications by Miao Li on CAR-T and CAR-NKT cell therapy, T-cell immunology, and super-resolution imaging of immune receptors, with plain-English summaries."
+lede: "Two threads run through my papers: how immune receptors organize and signal at the nanoscale, and how engineered immune cells behave as therapies. Every entry has a one-paragraph summary for non-specialists."
+---
+{%- assign pubs = site.data.publications -%}
+<div class="filter-bar" role="group" aria-label="Filter publications" data-filter-group="pubs">
+  <button type="button" data-filter="all" aria-pressed="true">All <span class="count">{{ pubs | size }}</span></button>
+  <button type="button" data-filter="first" aria-pressed="false">First or co-first author</button>
+  <button type="button" data-filter="cell-therapy" aria-pressed="false">Cell therapy and T cells</button>
+  <button type="button" data-filter="imaging" aria-pressed="false">Receptor imaging and biophysics</button>
+  <button type="button" data-filter="review" aria-pressed="false">Reviews</button>
+</div>
+<p class="filter-status visually-hidden" aria-live="polite" data-filter-status="pubs"></p>
+
+<div class="pub-list" data-filter-target="pubs">
+  {%- assign by_year = pubs | group_by: "year" -%}
+  {%- for g in by_year %}
+  <section class="pub-year" data-group>
+    <h2 class="year-head">{{ g.name }}</h2>
+    {%- for p in g.items %}
+      {% include pub.html pub=p %}
+    {%- endfor %}
+  </section>
+  {%- endfor %}
+</div>
+<p class="pub-foot muted">* Co-first authors. The graphics are schematic summaries I drew for this site, not the published figures. For citation counts and the complete record, see <a href="{{ site.links.scholar }}">Google Scholar</a>.</p>
+<p class="visually-hidden" aria-live="polite" data-copy-status></p>

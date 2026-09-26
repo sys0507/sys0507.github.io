@@ -1,0 +1,16 @@
+{%- assign po = include.post -%}
+<li class="post-item" data-tags="{{ po.format | default: 'article' }}">
+  <time class="post-date" datetime="{{ po.date | date_to_xmlschema }}">{{ po.date | date: "%b %-d, %Y" }}</time>
+  <div class="post-main">
+    <p class="post-format format-{{ po.format | default: 'article' }}">
+      {%- case po.format -%}
+        {%- when 'video' -%}<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M5 3.5v9l7-4.5z" fill="currentColor"/></svg>Video{% if po.video.duration %}, {{ po.video.duration }}{% endif %}
+        {%- when 'note' -%}<svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="3" fill="currentColor"/></svg>Note
+        {%- else -%}<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 4h10M3 8h10M3 12h6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>Article, {{ po.content | number_of_words | divided_by: 220 | plus: 1 }} min read
+      {%- endcase -%}
+    </p>
+    {%- assign hl = include.level | default: 3 -%}
+    <h{{ hl }} class="post-title"><a href="{{ po.url | relative_url }}">{{ po.title | smartify }}</a></h{{ hl }}>
+    <p class="post-desc">{{ po.description | default: po.excerpt | strip_html | truncatewords: 32 | smartify }}</p>
+  </div>
+</li>

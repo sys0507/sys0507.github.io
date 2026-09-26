@@ -1,0 +1,13 @@
+---
+layout: page
+title: "Projects"
+heading: "Projects"
+description: "Case studies by Miao Li: an AI agent for NGS pipelines, a protein language model for TCR discovery, open-source agent skills, and cell-therapy profiling."
+lede: "Each one starts with a bottleneck someone in the lab actually had. Software and models first; the research projects behind them follow."
+---
+{%- assign projects = site.projects | sort: "order" -%}
+<div class="project-list project-list--page">
+  {%- for pr in projects %}
+    {% include project-row.html project=pr eager=forloop.first level=2 %}
+  {%- endfor %}
+</div>

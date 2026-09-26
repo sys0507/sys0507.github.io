@@ -1,0 +1,79 @@
+---
+layout: default
+title: "CV"
+description: "Curriculum vitae of Miao Li, Ph.D.: Senior Scientist at AstraZeneca in computational immunology, TCR discovery, AI/ML, and cell therapy. Download the PDF."
+body_class: cv-page
+---
+{%- assign pubs = site.data.publications -%}
+{%- assign projects = site.projects | sort: "order" -%}
+<div class="wrap cv">
+  <header class="page-head cv-head">
+    <h1>{{ site.author.name }}, {{ site.author.honorific }}</h1>
+    <p class="page-lede">Senior Scientist working at the interface of AI-enabled software, computational biology, and immunology: deep learning models, AI agents, and single-cell and immune-repertoire pipelines for TCR discovery and cell therapy, grounded in hands-on CAR-T and TCR-T engineering.</p>
+    <p class="hero-actions no-print">
+      <a class="btn" href="{{ site.cv_pdf | relative_url }}" download>Download PDF</a>
+      <button class="btn btn--ghost" type="button" data-print>Print this page</button>
+    </p>
+    <p class="cv-contact">
+      <a href="mailto:{{ site.author.email }}">{{ site.author.email }}</a>
+      <a href="{{ site.links.linkedin }}">LinkedIn</a>
+      <a href="{{ site.links.github }}">GitHub</a>
+      <a href="{{ site.links.scholar }}">Google Scholar</a>
+    </p>
+  </header>
+
+  <section class="cv-section" id="experience" aria-labelledby="cv-exp">
+    <h2 id="cv-exp">Experience</h2>
+    {%- for x in site.data.experience %}
+    <article class="cv-item">
+      <p class="cv-when">{{ x.start }} – {{ x.end }}</p>
+      <div>
+        <h3>{{ x.role }}, {{ x.org }}</h3>
+        <p class="muted">{{ x.place }}</p>
+        <ul>{% for h in x.highlights %}<li>{{ h | markdownify | remove: '<p>' | remove: '</p>' | strip }}</li>{% endfor %}</ul>
+      </div>
+    </article>
+    {%- endfor %}
+  </section>
+
+  <section class="cv-section" id="projects" aria-labelledby="cv-proj">
+    <h2 id="cv-proj">Selected projects</h2>
+    {%- for pr in projects %}
+    <article class="cv-item">
+      <p class="cv-when">{{ pr.period }}</p>
+      <div>
+        <h3><a href="{{ pr.url | relative_url }}">{{ pr.title }}</a></h3>
+        <p>{{ pr.lede | smartify }}</p>
+      </div>
+    </article>
+    {%- endfor %}
+  </section>
+
+  <section class="cv-section" id="education" aria-labelledby="cv-edu">
+    <h2 id="cv-edu">Education</h2>
+    {%- for e in site.data.education %}
+    <article class="cv-item">
+      <p class="cv-when">{{ e.years }}</p>
+      <div><h3>{{ e.degree }}</h3><p class="muted">{{ e.school }}, {{ e.place }}</p></div>
+    </article>
+    {%- endfor %}
+  </section>
+
+  <section class="cv-section" id="publications" aria-labelledby="cv-pubs">
+    <h2 id="cv-pubs">Publications</h2>
+    <ol class="cv-pubs">
+      {%- for p in pubs %}
+      <li>{{ p.authors | replace: 'M. Li', '<b>M. Li</b>' }}. {{ p.title }}. <i>{{ p.venue }}</i> {{ p.year }}{% if p.citation %}, {{ p.citation }}{% endif %}. <a href="https://doi.org/{{ p.doi }}">doi:{{ p.doi }}</a></li>
+      {%- endfor %}
+    </ol>
+    <p class="muted">* Co-first authors.</p>
+  </section>
+
+  <section class="cv-section" id="skills" aria-labelledby="cv-skills">
+    <h2 id="cv-skills">Skills</h2>
+    <div class="toolkit">
+      <div><h3>Computational</h3><dl>{% for s in site.data.skills.computer %}<div><dt>{{ s.area }}</dt><dd>{{ s.items }}</dd></div>{% endfor %}</dl></div>
+      <div><h3>Wet lab</h3><dl>{% for s in site.data.skills.bench %}<div><dt>{{ s.area }}</dt><dd>{{ s.items }}</dd></div>{% endfor %}</dl></div>
+    </div>
+  </section>
+</div>

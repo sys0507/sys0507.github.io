@@ -1,0 +1,25 @@
+{%- assign pr = include.project -%}
+<article class="project-row channel-{{ pr.channel }}">
+  <a class="project-fig" href="{{ pr.url | relative_url }}" tabindex="-1" aria-hidden="true">
+    <img src="{{ pr.cover | relative_url }}" alt="{{ pr.cover_alt | escape }}" width="640" height="400" {% if include.eager %}fetchpriority="high"{% else %}loading="lazy"{% endif %} decoding="async">
+  </a>
+  <div class="project-body">
+    <p class="project-meta"><span class="channel-tag">{% case pr.channel %}{% when 'code' %}Code{% when 'merge' %}Research + code{% else %}Research{% endcase %}</span><span class="period">{{ pr.period }}</span></p>
+    {%- assign hl = include.level | default: 3 -%}
+    <h{{ hl }} class="project-title"><a href="{{ pr.url | relative_url }}">{{ pr.title }}</a></h{{ hl }}>
+    <p class="project-lede">{{ pr.lede | smartify }}</p>
+    {%- if pr.outcomes %}
+    <ul class="outcomes" role="list">
+      {%- for o in pr.outcomes limit: 3 %}
+      <li><strong>{{ o.value }}</strong> <span>{{ o.label }}</span></li>
+      {%- endfor %}
+    </ul>
+    {%- endif %}
+    <p class="project-stack"><span class="visually-hidden">Built with: </span>{{ pr.stack | join: ', ' }}</p>
+    <p class="project-links">
+      <a href="{{ pr.url | relative_url }}">Read the case study<span class="visually-hidden">: {{ pr.title }}</span></a>
+      {%- if pr.repo %}<a href="{{ pr.repo }}">Source on GitHub</a>{% endif -%}
+      {%- if pr.paper %}<a href="{{ pr.paper }}">Paper</a>{% endif -%}
+    </p>
+  </div>
+</article>
