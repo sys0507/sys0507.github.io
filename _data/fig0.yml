@@ -21,7 +21,7 @@
   place: "Indiana University"
   blurb: "Super-resolution imaging and ML image analysis of innate immune receptors."
   link: "/publications/?filter=imaging"
-  channel: research
+  channel: merge
   x: 132
   y: 186
   sx: 38
@@ -34,7 +34,7 @@
   place: "UCLA"
   blurb: "Single-cell RNA and TCR sequencing of CAR-T and stem cell-derived CAR-NKT cells in solid tumors."
   link: "/projects/car-t-car-nkt-profiling/"
-  channel: research
+  channel: merge
   x: 272
   y: 104
   sx: 46
