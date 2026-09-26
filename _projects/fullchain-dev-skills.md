@@ -11,6 +11,9 @@ cover: /assets/img/projects/fullchain-skills.svg
 cover_alt: "A ring of eleven development stages from research to release, with gates marked where the workflow stops for a decision."
 cover_caption: "Eleven stages; the bars mark gates where the chain stops and waits for a person."
 repo: "https://github.com/sys0507/FullChain-Dev-Skills-EN"
+video:
+  src: /assets/video/FullChain-Dev-Skills.mp4
+  caption: "An introduction to Full-Chain Development Skills."
 outcomes:
   - value: "21"
     label: "skills covering 11 stages of development"
@@ -19,6 +22,10 @@ outcomes:
   - value: "MIT"
     label: "licensed, usable chained or one at a time"
 ---
+
+## Project introduction
+
+{% include video.html video=page.video title=page.title %}
 
 ## Why
 
