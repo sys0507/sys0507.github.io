@@ -9,7 +9,7 @@
   var clusters;
   try { clusters = JSON.parse(dataEl.textContent); } catch (e) { return; }
   var NS = "http://www.w3.org/2000/svg";
-  var W = 560, H = 440;
+  var W = svg.viewBox.baseVal.width, H = svg.viewBox.baseVal.height;
   var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   var caption = document.querySelector("[data-fig0-caption]");
   var defaultCaption = caption ? caption.innerHTML : "";
@@ -42,9 +42,9 @@
 
   /* ---- axes, scanpy style ---- */
   var axes = el("g", { "class": "f0-overlay", "aria-hidden": "true" }, svg);
-  el("path", { d: "M16,378 L16,424 L62,424", "class": "f0-axis", "marker-start": "url(#f0-arrowhead)", "marker-end": "url(#f0-arrowhead)" }, axes);
-  el("text", { x: 70, y: 428, "class": "f0-axis-label" }, axes).textContent = "UMAP 1";
-  var ax2 = el("text", { x: 20, y: 370, "class": "f0-axis-label", transform: "rotate(-90 20 370)" }, axes);
+  el("path", { d: "M16," + (H - 62) + " L16," + (H - 16) + " L62," + (H - 16), "class": "f0-axis", "marker-start": "url(#f0-arrowhead)", "marker-end": "url(#f0-arrowhead)" }, axes);
+  el("text", { x: 70, y: H - 12, "class": "f0-axis-label" }, axes).textContent = "UMAP 1";
+  var ax2 = el("text", { x: 20, y: H - 70, "class": "f0-axis-label", transform: "rotate(-90 20 " + (H - 70) + ")" }, axes);
   ax2.textContent = "UMAP 2";
 
   /* ---- clusters ---- */

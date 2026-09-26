@@ -1,7 +1,33 @@
 # Fig. 0 on the home page: a career drawn as a single-cell embedding.
 # Clusters are listed in pseudotime order; the curve connects them.
-# x, y live in a 560 × 440 box (origin top-left). n = number of dots.
+# x, y live in a 560 × 600 box (origin top-left). n = number of dots.
 # channel: research | code | merge
+- id: pharma
+  label: "Pharmaceutical engineering"
+  years: "2006–2011"
+  place: "Wuhan University of Technology"
+  blurb: "Undergraduate studies in pharmaceutical engineering."
+  link: "/cv/#education"
+  channel: research
+  x: 350
+  y: 520
+  sx: 40
+  sy: 24
+  n: 90
+  label_at: [0, 48, middle]
+- id: delivery
+  label: "Targeted drug delivery"
+  years: "2011–2012"
+  place: "The University of Nottingham"
+  blurb: "Master's research in targeted drug delivery."
+  link: "/cv/#education"
+  channel: research
+  x: 120
+  y: 468
+  sx: 34
+  sy: 23
+  n: 100
+  label_at: [0, 50, middle]
 - id: nano
   label: "Nano-optics"
   years: "2013–2017"
