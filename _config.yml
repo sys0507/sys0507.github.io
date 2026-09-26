@@ -44,7 +44,7 @@ social:
     - "https://scholar.google.com/citations?user=JRzxS2wAAAAJ&hl=en"
     - "https://github.com/sys0507"
     - "https://www.linkedin.com/in/miao-li-02886448/"
-google_site_verification: "<meta name="google-site-verification" content="zCvHqMzV2d8HK_C78-9S0Y4cQh9jjpFv0aJouhpMG5o" />"   # paste the token from Google Search Console
+    google_site_verification: "<content="zCvHqMzV2d8HK_C78-9S0Y4cQh9jjpFv0aJouhpMG5o" />"   # paste the token from Google Search Console
 
 # ---------- content ----------
 collections:
