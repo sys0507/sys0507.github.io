@@ -6,7 +6,7 @@
 {%- capture tags -%}{% if p.role == 'first' or p.role == 'co-first' %}first {% endif %}{% for t in p.topics %}{{ t }} {% endfor %}{% if p.kind != 'article' %}review{% endif %}{%- endcapture -%}
 <article class="pub{% if include.compact %} pub--compact{% endif %}" data-tags="{{ tags | strip }}" id="{{ p.key }}">
   <a class="pub-fig" href="{{ href }}" tabindex="-1" aria-hidden="true">
-    <img src="{{ p.image | relative_url }}" alt="{{ p.image_alt | escape }}" width="640" height="400" loading="lazy" decoding="async">
+    <img src="{{ p.image | relative_url }}" alt="{{ p.image_alt | escape }}" width="{{ p.image_width | default: 640 }}" height="{{ p.image_height | default: 400 }}" loading="lazy" decoding="async">
   </a>
   <div class="pub-body">
     <p class="pub-venue"><span class="venue">{{ p.venue }}</span> <span class="year">{{ p.year }}</span>{% if p.citation and include.compact != true %}<span class="citation">, {{ p.citation }}</span>{% endif %}</p>

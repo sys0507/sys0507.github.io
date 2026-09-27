@@ -22,8 +22,10 @@
   topics: [cell-therapy]
   oa: true
   selected: true
-  image: /assets/img/pubs/sttt-2026.svg
-  image_alt: "CAR-T and CAR-NKT cells compared over time: CAR-NKT cells infiltrate tumors more and persist longer, and each pairs with a different checkpoint blockade."
+  image: /assets/img/pubs/sttt-2026.png
+  image_width: 1536
+  image_height: 1024
+  image_alt: "Conceptual schematic linking spatiotemporal single-cell profiling to matched checkpoint therapies: CAR-T with anti-TIGIT and CAR-NKT with anti-CD96, followed by experimental validation in solid-tumor models."
   summary: >-
     We followed conventional CAR-T cells and stem cell-derived CAR-NKT cells across tissues and time in solid-tumor
     models. CAR-NKT cells homed into tumors better and persisted longer, and the two products responded to different
@@ -57,8 +59,10 @@
   role: contributing
   kind: article
   topics: [cell-therapy]
-  image: /assets/img/pubs/med-2025.svg
-  image_alt: "An allogeneic CAR-NKT cell attacks ovarian tumor cells through its CAR and NK receptors and suppressive macrophages through its TCR."
+  image: /assets/img/pubs/med-2025.png
+  image_width: 1536
+  image_height: 1024
+  image_alt: "Conceptual schematic of bioinformatics-guided allogeneic CAR-NKT design for ovarian cancer: CAR, NK receptors, and NKT TCR target tumor cells and the suppressive microenvironment, with cell-state analysis, immunogenicity studies, and preclinical validation."
   summary: >-
     Off-the-shelf CAR-NKT cells attacked ovarian tumors and their suppressive microenvironment through several
     mechanisms at once, outperforming conventional CAR-T cells in preclinical models with a favorable safety profile.
