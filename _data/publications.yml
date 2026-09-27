@@ -78,8 +78,10 @@
   kind: article
   topics: [cell-therapy]
   selected: true
-  image: /assets/img/pubs/cell-2025.svg
-  image_alt: "The serotonin transporter SERT on CD8 T cells clears serotonin; SSRIs block it and combine with PD-1 blockade to slow tumor growth."
+  image: /assets/img/pubs/cell-2025.png
+  image_width: 1536
+  image_height: 1024
+  image_alt: "Bioinformatics and functional validation connect SERT blockade to enhanced CD8 T-cell activity: single-cell and human tumor analyses support the serotonin mechanism, while fluoxetine plus anti-PD-1 improves tumor control in mice."
   summary: >-
     Tumor-infiltrating CD8 T cells switch on the serotonin transporter SERT, which acts like an immune checkpoint.
     Widely prescribed antidepressants (SSRIs) that block it boosted anti-tumor T cells and worked together with PD-1
