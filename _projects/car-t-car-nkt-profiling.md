@@ -3,13 +3,15 @@ title: "CAR-T vs. CAR-NKT in solid tumors"
 description: "Spatiotemporal single-cell profiling of CAR-T and stem cell-derived CAR-NKT cells in solid tumors, published in Signal Transduction and Targeted Therapy (2026)."
 lede: "Following two cell therapies through tissues and time to learn why one of them does better in solid tumors — and which checkpoint each one needs."
 order: 4
-channel: research
+channel: merge
 period: "2022 – 2026"
 role: "Co-first author; led the single-cell and transcriptomic analyses"
 stack: [scRNA-seq, scTCR-seq, Seurat, Scanpy, R, Python]
-cover: /assets/img/pubs/sttt-2026.svg
-cover_alt: "CAR-T and CAR-NKT cells compared over time: CAR-NKT cells infiltrate tumors more and persist longer, and each pairs with a different checkpoint blockade."
-cover_caption: "Schematic summary of the study."
+cover: /assets/img/projects/car-t-car-nkt.webp
+cover_width: 1800
+cover_height: 1400
+cover_alt: "Hand-drawn schematic: a single-cell atlas of 274,878 cells and >3,200 receptor-ligand pairs follows PBMC-derived CAR-T and allogeneic, IL-15-enhanced CAR-NKT cells into an MSLN-targeted solid tumor. CAR-T cells are held back through TIGIT-CD112 and pair with anti-TIGIT; CAR-NKT cells stay at the tumor, are held back through CD96-CD155, and pair with anti-CD96. Flow cytometry, killing assays, and an ovarian xenograft validate the match."
+cover_caption: "Schematic summary of the study: single-cell discovery on the left, the matched checkpoint partner for each cell product on the right."
 paper: "https://www.nature.com/articles/s41392-026-02602-x"
 outcomes:
   - value: "Homing"

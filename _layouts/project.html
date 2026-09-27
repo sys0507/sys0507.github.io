@@ -17,7 +17,7 @@ body_class: project-page
   </dl>
 
   <figure class="plate plate--wide">
-    <img src="{{ page.cover | relative_url }}" alt="{{ page.cover_alt | escape }}" width="640" height="400" fetchpriority="high">
+    <img src="{{ page.cover | relative_url }}" alt="{{ page.cover_alt | escape }}" width="{{ page.cover_width | default: 640 }}" height="{{ page.cover_height | default: 400 }}" fetchpriority="high">
     {%- if page.cover_caption %}<figcaption>{{ page.cover_caption }}</figcaption>{% endif %}
   </figure>
 

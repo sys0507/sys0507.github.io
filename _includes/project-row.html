@@ -1,7 +1,7 @@
 {%- assign pr = include.project -%}
 <article class="project-row channel-{{ pr.channel }}">
   <a class="project-fig" href="{{ pr.url | relative_url }}" tabindex="-1" aria-hidden="true">
-    <img src="{{ pr.cover | relative_url }}" alt="{{ pr.cover_alt | escape }}" width="640" height="400" {% if include.eager %}fetchpriority="high"{% else %}loading="lazy"{% endif %} decoding="async">
+    <img src="{{ pr.cover | relative_url }}" alt="{{ pr.cover_alt | escape }}" width="{{ pr.cover_width | default: 640 }}" height="{{ pr.cover_height | default: 400 }}" {% if include.eager %}fetchpriority="high"{% else %}loading="lazy"{% endif %} decoding="async">
   </a>
   <div class="project-body">
     <p class="project-meta"><span class="channel-tag">{% case pr.channel %}{% when 'code' %}Code{% when 'merge' %}Research + code{% else %}Research{% endcase %}</span><span class="period">{{ pr.period }}</span></p>
