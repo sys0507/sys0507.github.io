@@ -1,0 +1,28 @@
+{%- comment -%}
+  One shared viewer for all publication graphics. Filled in by assets/js/main.js
+  from the clicked .pub article, so new papers in _data/publications.yml need nothing extra.
+{%- endcomment -%}
+<dialog class="lightbox" data-lightbox-dialog aria-labelledby="lightbox-title">
+  <div class="lightbox-inner">
+    <header class="lightbox-head">
+      <p class="lightbox-venue" data-lb-venue></p>
+      <button type="button" class="lightbox-close" data-lb-close aria-label="Close">&times;</button>
+    </header>
+    <h2 class="lightbox-title" id="lightbox-title" data-lb-title></h2>
+    <figure class="lightbox-fig">
+      <a data-lb-full href="#" target="_blank" rel="noopener" title="Open full-size image in a new tab"><img data-lb-img src="" alt=""></a>
+    </figure>
+    <section class="lightbox-text">
+      <h3>In plain English</h3>
+      <div data-lb-summary></div>
+    </section>
+    <footer class="lightbox-foot">
+      <a data-lb-link href="#">Read the paper</a>
+      <span class="lightbox-nav">
+        <button type="button" class="linklike" data-lb-prev>&larr; Previous</button>
+        <span class="lightbox-count" data-lb-count></span>
+        <button type="button" class="linklike" data-lb-next>Next &rarr;</button>
+      </span>
+    </footer>
+  </div>
+</dialog>
