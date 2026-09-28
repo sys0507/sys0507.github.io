@@ -99,8 +99,10 @@
   topics: [cell-therapy]
   oa: true
   selected: true
-  image: /assets/img/pubs/nbt-2025.svg
-  image_alt: "Manufacturing flow from stem and progenitor cells, through gene engineering and feeder-free culture, to off-the-shelf CAR-NKT cells."
+  image: /assets/img/pubs/nbt-2025.png
+  image_width: 1536
+  image_height: 1024
+  image_alt: "Cord-blood stem and progenitor cells become allogeneic CAR-NKT cells through a six-week culture. Single-cell and methylation analyses explain effector and memory states and low immune-marker expression, supported by functional tests and preclinical myeloma results."
   summary: >-
     A feeder-free, clinically guided process turns blood stem and progenitor cells into IL-15-enhanced allogeneic
     CAR-NKT cells at high yield and purity, with anti-tumor activity across several cancer models.
