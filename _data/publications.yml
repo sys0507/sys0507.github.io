@@ -199,8 +199,10 @@
   topics: [imaging]
   oa: true
   selected: true
-  image: /assets/img/pubs/sciadv-2020.svg
-  image_alt: "Nanoarrays with ligand clusters at three spacings, and a response curve that rises as spacing shrinks until it plateaus."
+  image: /assets/img/pubs/sciadv-2020.png
+  image_width: 1536
+  image_height: 1024
+  image_alt: "A macrophage rests on an artificial phagocytic synapse of Pam3-coated gold nanodisks and IgG-coated glass. A schematic shows the spacing limit of TLR1/2 clusters and the TNF-alpha response plateau at close ligand spacing."
   summary: >-
     We built nanoarrays that mimic the contact zone between a macrophage and a microbe. Moving ligand clusters closer
     together brought receptor clusters together and increased inflammatory signaling — up to an intrinsic ceiling.
