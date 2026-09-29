@@ -9,6 +9,8 @@ video:
   poster: /assets/img/notebook/p-value/poster.jpg
   duration: "6:37"
   caption: "Narrated, with captions. The full illustrated walkthrough and runnable code are below."
+image: /assets/img/notebook/p-value/abstract.png
+image_alt: "Hand-drawn graphic: a histogram of differences from shuffled labels, with the observed 7 mmHg result in the right tail and p = 0.034."
 ---
 
 > **In one sentence:** a p-value measures how surprising your data would be *if nothing were really going on*.

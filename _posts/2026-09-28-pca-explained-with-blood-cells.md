@@ -9,6 +9,8 @@ video:
   poster: /assets/img/notebook/pca/poster.jpg
   duration: "6:31"
   caption: "Narrated, with captions. The full illustrated walkthrough and runnable code are below."
+image: /assets/img/notebook/pca/abstract.png
+image_alt: "Hand-drawn graphic: T cells and monocytes as two point clouds, with the first principal component (94% of the variance) running through both."
 ---
 
 > **In one sentence:** PCA rotates your data onto new axes, ordered by how much variation each one captures, so a handful of axes can summarize thousands of genes.

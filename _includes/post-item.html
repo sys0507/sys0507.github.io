@@ -1,6 +1,10 @@
 {%- assign po = include.post -%}
-<li class="post-item" data-tags="{{ po.format | default: 'article' }}">
+{%- assign showfig = false -%}{%- if include.fig and po.image -%}{%- assign showfig = true -%}{%- endif -%}
+<li class="post-item{% if showfig %} post-item--fig{% endif %}" data-tags="{{ po.format | default: 'article' }}">
   <time class="post-date" datetime="{{ po.date | date_to_xmlschema }}">{{ po.date | date: "%b %-d, %Y" }}</time>
+  {%- if showfig %}
+  <a class="post-fig" href="{{ po.url | relative_url }}" tabindex="-1" aria-hidden="true"><img src="{{ po.image | relative_url }}" alt="{{ po.image_alt | escape }}" width="1536" height="1024" loading="lazy" decoding="async"></a>
+  {%- endif %}
   <div class="post-main">
     <p class="post-format format-{{ po.format | default: 'article' }}">
       {%- case po.format -%}
