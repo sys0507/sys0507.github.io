@@ -26,6 +26,7 @@ Custom domain later? Add it under Settings → Pages and change `url` in `_confi
 | Post a video | add `_posts/YYYY-MM-DD-short-title.md` with `format: video` and `video.youtube` |
 | Post a quick note | add `_posts/YYYY-MM-DD-short-title.md` with `format: note` |
 | Pin a post to the top of the Notebook page | add `pinned: true` to its front matter |
+| Post a paper reading (explainer of a paper) | use `format: video` (or `article`) and add `filters: [paper, note]` so it also shows under Papers and Notes |
 | Add a paper | add a block at the top of `_data/publications.yml` and a graphic in `assets/img/pubs/` |
 | Add a project | add `_projects/my-project.md` and a cover in `assets/img/projects/` |
 | Change jobs, education, skills | `_data/experience.yml`, `_data/education.yml`, `_data/skills.yml` |

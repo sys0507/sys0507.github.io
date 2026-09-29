@@ -1,6 +1,6 @@
 {%- assign po = include.post -%}
 {%- assign showfig = false -%}{%- if include.fig and po.image -%}{%- assign showfig = true -%}{%- endif -%}
-<li class="post-item{% if showfig %} post-item--fig{% endif %}" data-tags="{{ po.format | default: 'article' }}">
+<li class="post-item{% if showfig %} post-item--fig{% endif %}" data-tags="{{ po.format | default: 'article' }}{% if po.filters %} {{ po.filters | join: ' ' }}{% endif %}">
   <time class="post-date" datetime="{{ po.date | date_to_xmlschema }}">{{ po.date | date: "%b %-d, %Y" }}</time>
   {%- if showfig %}
   <a class="post-fig" href="{{ po.url | relative_url }}" tabindex="-1" aria-hidden="true"><img src="{{ po.image | relative_url }}" alt="{{ po.image_alt | escape }}" width="1536" height="1024" loading="lazy" decoding="async"></a>
@@ -12,6 +12,7 @@
         {%- when 'note' -%}<svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="3" fill="currentColor"/></svg>Note
         {%- else -%}<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 4h10M3 8h10M3 12h6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>Article, {{ po.content | number_of_words | divided_by: 220 | plus: 1 }} min read
       {%- endcase -%}
+      {%- if po.filters contains 'paper' %}<span class="post-pin">Paper reading</span>{% endif -%}
       {%- if include.pin %}<span class="post-pin">Pinned</span>{% endif -%}
     </p>
     {%- assign hl = include.level | default: 3 -%}
