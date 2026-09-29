@@ -143,3 +143,14 @@ See `docs/THEME.md` for the colour tokens, type, and the reasoning behind "Two C
 - `assets/cv/Miao_Li_CV.pdf` contains your phone number; consider a web version without it.
 - Internal work (the NGS assistant) is described at architecture level only; confirm this matches your employer's policy on external communications.
 - The three starter posts are drafts in your voice. Edit or delete them freely.
+
+### Notebook graphics
+
+Every Notebook post can show a small graphical abstract next to its title on the Notebook page (the home page list stays text-only). Add two lines to the post's front matter:
+
+```yaml
+image: /assets/img/notebook/<post-folder>/abstract.png   # 1536×1024 (3:2), simple and hand-drawn
+image_alt: "One sentence describing the graphic for screen readers."
+```
+
+The same image is used as the social-media preview card (jekyll-seo-tag reads `image`). Keep it to one idea, a big title and one visual; it is shown about 13rem wide. The editable Excalidraw source sits next to it as `abstract.excalidraw`.

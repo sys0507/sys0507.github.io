@@ -9,6 +9,8 @@ video:
   poster: /assets/img/notebook/transformer/poster.jpg
   duration: "9:47"
   caption: "Narrated, with captions. The full illustrated walkthrough and runnable code are below."
+image: /assets/img/notebook/transformer/abstract.png
+image_alt: "Hand-drawn graphic: the 13 residues of a CDR3β with attention arcs between them; the strongest arc links arginine to glutamate with weight 0.605."
 ---
 
 > **In one sentence:** a Transformer turns a sequence into vectors and, layer by layer, lets every token gather information from every other token through **attention**, then refines each token with a small neural network.
