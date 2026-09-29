@@ -2,6 +2,7 @@
 title: "AI in drug discovery: where do we really stand?"
 description: "A 6-minute narrated video and an illustrated guided reading of Bender et al. (Nature Reviews Drug Discovery, 2026): why AI's clinical impact is still thin, where the value really lies, why data and benchmarks mislead, and what would change it."
 format: video
+filters: [paper, note]   # also listed under Papers and Notes
 tags: [AI, drug discovery, paper reading, machine learning]
 math: true
 video:
