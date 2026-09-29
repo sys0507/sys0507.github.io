@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "CV"
-description: "Curriculum vitae of Miao Li, Ph.D.: Senior Scientist at AstraZeneca in computational immunology, TCR discovery, AI/ML, and cell therapy. Download the PDF."
+description: "Curriculum vitae of Miao Li, Ph.D.: Senior Scientist at AstraZeneca in computational immunology, TCR discovery, AI/ML, and cell therapy."
 body_class: cv-page
 ---
 {%- assign pubs = site.data.publications -%}
@@ -11,8 +11,7 @@ body_class: cv-page
     <h1>{{ site.author.name }}, {{ site.author.honorific }}</h1>
     <p class="page-lede">Senior Scientist working at the interface of AI-enabled software, computational biology, and immunology: deep learning models, AI agents, and single-cell and immune-repertoire pipelines for TCR discovery and cell therapy, grounded in hands-on CAR-T and TCR-T engineering.</p>
     <p class="hero-actions no-print">
-      <a class="btn" href="{{ site.cv_pdf | relative_url }}" download>Download PDF</a>
-      <button class="btn btn--ghost" type="button" data-print>Print this page</button>
+      <button class="btn" type="button" data-print>Print this page</button>
     </p>
     <p class="cv-contact">
       <a href="mailto:{{ site.author.email }}">{{ site.author.email }}</a>

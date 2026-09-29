@@ -27,7 +27,6 @@ Custom domain later? Add it under Settings → Pages and change `url` in `_confi
 | Post a quick note | add `_posts/YYYY-MM-DD-short-title.md` with `format: note` |
 | Add a paper | add a block at the top of `_data/publications.yml` and a graphic in `assets/img/pubs/` |
 | Add a project | add `_projects/my-project.md` and a cover in `assets/img/projects/` |
-| Update the CV PDF | replace `assets/cv/Miao_Li_CV.pdf` (keep the file name) |
 | Change jobs, education, skills | `_data/experience.yml`, `_data/education.yml`, `_data/skills.yml` |
 | Change links, email, bio note | `_config.yml` |
 | Change Fig. 0 on the home page | `_data/fig0.yml` |
@@ -140,7 +139,6 @@ See `docs/THEME.md` for the colour tokens, type, and the reasoning behind "Two C
 ## Before going live, check
 
 - `author.email` in `_config.yml`: a personal address is usually better than a work address on a public site.
-- `assets/cv/Miao_Li_CV.pdf` contains your phone number; consider a web version without it.
 - Internal work (the NGS assistant) is described at architecture level only; confirm this matches your employer's policy on external communications.
 - The three starter posts are drafts in your voice. Edit or delete them freely.
 
