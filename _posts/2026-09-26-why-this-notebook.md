@@ -3,6 +3,7 @@ title: "Why this notebook exists"
 description: "A place for short explainers, working notes, and the occasional video on statistics, machine learning, and immunology."
 format: note
 tags: [meta]
+pinned: true
 image: /assets/img/notebook/why-this-notebook/abstract.png
 image_alt: "Hand-drawn graphic: an open notebook with small sketches for statistics, machine learning and immunology."
 ---
