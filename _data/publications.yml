@@ -205,8 +205,13 @@
   role: first
   kind: review
   topics: [imaging]
-  image: /assets/img/pubs/jcs-2021.svg
-  image_alt: "Different innate immune receptors form clusters in the cell membrane beneath a pathogen surface."
+  image: /assets/img/pubs/jcs-2021.png
+  image_width: 1536
+  image_height: 1024
+  image_alt: "Review synthesis linking super-resolution imaging, quantitative analysis of receptor cluster size, spacing and segregation, and patterned-ligand experiments to innate immune signaling."
+  graphic_caption: >-
+    This review connects the quantitative interpretation of super-resolution images with the spatial regulation of innate immunity. Imaging studies, including STORM, reveal receptor nanoclusters and their organization. Computational interpretation of these images makes cluster size, spacing and segregation accessible to measurement. The schematic analysis panel summarizes these spatial questions rather than a specific algorithm introduced by the review.
+    Two examples illustrate the biological significance: nearby, distinct Dectin-1 and TLR2 nanoclusters support signaling crosstalk, whereas exclusion of the inhibitory phosphatase CD45 from activated FcγR signaling regions helps sustain signaling. Complementary experiments using patterned ligands on planar substrates or engineered particles manipulate receptor arrangements and test functional consequences. Mixed and spatially segregated ligand patterns on particles probe Dectin-1–TLR2 cooperation through macrophage response measurements. Together, quantitative imaging and spatial perturbation help connect receptor organization to immune function. This is a conceptual synthesis of published studies discussed in the review; all localization maps and experimental icons are schematic.
   summary: >-
     A review of how innate immune receptors assemble into nano- and micro-scale clusters, and how that spatial
     organization shapes pathogen detection and downstream signaling.
