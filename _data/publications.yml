@@ -143,8 +143,13 @@
   kind: review
   topics: [cell-therapy]
   oa: true
-  image: /assets/img/pubs/cancers-2022.svg
-  image_alt: "An iPSC at the center differentiates into T, NK, iNKT, gamma-delta T cells and macrophages."
+  image: /assets/img/pubs/cancers-2022.png
+  image_width: 1536
+  image_height: 1024
+  image_alt: "A renewable engineered iPSC bank supplies iPSC-derived CAR-T and CAR-NK cells, with other immune lineages under study."
+  graphic_caption: >-
+    Reprogramming donor somatic cells creates a renewable iPSC source that can be genetically engineered, clonally selected and banked. Directed differentiation generates distinct immune-cell products, including CAR-T and CAR-NK cells, supporting the development of scalable, off-the-shelf cancer immunotherapy. Additional iPSC-derived lineages under study include iNKT, gamma-delta T, MAIT cells and macrophages.
+    Conceptual synthesis of a 2022 review. Differentiation methods and clinical evidence vary across platforms; product purity, safety, immune compatibility and persistence remain key translational challenges.
   summary: >-
     A review of how induced pluripotent stem cells can be gene engineered and differentiated into T, NK, iNKT, γδ T
     cells and macrophages to make universal, off-the-shelf cancer immunotherapies.
