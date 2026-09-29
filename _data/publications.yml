@@ -246,8 +246,12 @@
   role: contributing
   kind: perspective
   topics: [imaging]
-  image: /assets/img/pubs/acsnano-2019.svg
-  image_alt: "A freely diffusing single-particle trajectory next to a confined one that may be a probe artifact."
+  image: /assets/img/pubs/acsnano-2019.png
+  image_width: 1536
+  image_height: 1024
+  image_alt: "Perspective on single-particle tracking: multivalent gold probes cross-link membrane lipids, while monovalent oriented labeling reduces perturbation; computational localization, linking and mean-square displacement analysis quantify motion."
+  graphic_caption: >-
+    Single-particle tracking reveals membrane dynamics, but probe attachment can alter the motion being measured. This Perspective explains how centroid localization, frame-to-frame linking and mean-square displacement analysis reconstruct trajectories and distinguish diffusion behaviors. Its central caution is illustrated by a model-membrane study by Liao et al. discussed in the article: multivalent gold-nanoparticle attachments can cross-link lipids and slow diffusion, whereas monovalent, oriented labeling can reduce perturbation. Probe size, linker design and membrane geometry also matter. The figure synthesizes reviewed evidence; the diffusion curves are conceptual, and reduced labeling artifacts in model membranes do not establish artifact-free tracking in cells.
   summary: >-
     A perspective on single-particle tracking in cell membranes: what nanoparticle probes have revealed, and how
     probe size, labeling, and analysis choices can produce misleading trajectories.
