@@ -12,6 +12,7 @@
         {%- when 'note' -%}<svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="3" fill="currentColor"/></svg>Note
         {%- else -%}<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 4h10M3 8h10M3 12h6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>Article, {{ po.content | number_of_words | divided_by: 220 | plus: 1 }} min read
       {%- endcase -%}
+      {%- if include.pin %}<span class="post-pin">Pinned</span>{% endif -%}
     </p>
     {%- assign hl = include.level | default: 3 -%}
     <h{{ hl }} class="post-title"><a href="{{ po.url | relative_url }}">{{ po.title | smartify }}</a></h{{ hl }}>

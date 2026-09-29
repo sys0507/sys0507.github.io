@@ -311,6 +311,7 @@ html:has(.lightbox[open]) { overflow: hidden; }
 .post-format { display: inline-flex; align-items: center; gap: .35rem; font-size: .84rem; font-weight: 600; color: var(--research); margin-bottom: .3rem; }
 .post-format svg { width: 14px; height: 14px; }
 .format-video { color: var(--code); }
+.post-pin { margin-left: .35rem; padding: 0 .45rem; border: 1px solid currentColor; border-radius: 999px; font-size: .74rem; font-weight: 600; line-height: 1.5; color: var(--ink-3); }
 .format-note { color: var(--merge); }
 .post-title { font-size: 1.28rem; font-weight: 650; letter-spacing: -.01em; }
 .post-desc { font-family: var(--font-serif); font-size: 1.02rem; line-height: 1.58; color: var(--ink-2); margin-top: .35rem; max-width: 64ch; }

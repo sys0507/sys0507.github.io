@@ -15,7 +15,8 @@ lede: "Short explainers, videos, and working notes. Written for curious scientis
 <p class="filter-status visually-hidden" aria-live="polite" data-filter-status="posts"></p>
 {%- if site.posts.size > 0 %}
 <ol class="post-list post-list--page" role="list" data-filter-target="posts">
-  {%- for po in site.posts %}{% include post-item.html post=po level=2 fig=true %}{% endfor %}
+  {%- for po in site.posts %}{% if po.pinned %}{% include post-item.html post=po level=2 fig=true pin=true %}{% endif %}{% endfor %}
+  {%- for po in site.posts %}{% unless po.pinned %}{% include post-item.html post=po level=2 fig=true %}{% endunless %}{% endfor %}
 </ol>
 {%- endif %}
 <p class="empty" data-filter-empty="posts" hidden>Nothing here yet. Try another filter, or subscribe via <a href="{{ '/feed.xml' | relative_url }}">RSS</a> to get the next one.</p>
