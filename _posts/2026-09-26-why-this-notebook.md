@@ -3,6 +3,8 @@ title: "Why this notebook exists"
 description: "A place for short explainers, working notes, and the occasional video on statistics, machine learning, and immunology."
 format: note
 tags: [meta]
+image: /assets/img/notebook/why-this-notebook/abstract.png
+image_alt: "Hand-drawn graphic: an open notebook with small sketches for statistics, machine learning and immunology."
 ---
 
 I spend my days between two kinds of work: running experiments on T cells, and writing the models and tools that decide which experiments are worth running. The ideas that help most in both places are usually simple ones explained well.

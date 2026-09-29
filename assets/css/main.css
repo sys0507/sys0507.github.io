@@ -303,6 +303,11 @@ html:has(.lightbox[open]) { overflow: hidden; }
 .post-item:last-child { border-bottom: 1px solid var(--rule); }
 @media (min-width: 44rem) { .post-item { grid-template-columns: 8.5rem minmax(0, 1fr); } }
 .post-date { font-size: .9rem; color: var(--ink-3); padding-top: .2rem; white-space: nowrap; }
+.post-fig { display: block; border-radius: var(--radius); }
+.post-fig img { width: 100%; height: auto; border-radius: var(--radius); border: 1px solid var(--rule); background: var(--plate); transition: border-color .15s, box-shadow .15s; }
+.post-fig:hover img, .post-fig:focus-visible img { border-color: var(--research); box-shadow: 0 4px 18px rgba(14, 110, 128, .14); }
+@media (max-width: 43.99rem) { .post-fig { max-width: 22rem; margin-block: .35rem .25rem; } }
+@media (min-width: 44rem) { .post-item--fig { grid-template-columns: 8.5rem 13rem minmax(0, 1fr); } }
 .post-format { display: inline-flex; align-items: center; gap: .35rem; font-size: .84rem; font-weight: 600; color: var(--research); margin-bottom: .3rem; }
 .post-format svg { width: 14px; height: 14px; }
 .format-video { color: var(--code); }
