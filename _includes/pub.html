@@ -27,7 +27,7 @@
     <details class="pub-summary">
       <summary>In plain English</summary>
       <p>{{ p.summary | smartify }}</p>
-      <p class="fig-alt"><span>Graphic:</span> {{ p.image_alt }}</p>
+      <p class="fig-alt"><span>Graphic:</span> {{ p.graphic_caption | default: p.image_alt | escape }}</p>
     </details>
     <p class="pub-actions">
       <a href="{{ href }}">Read the paper</a>

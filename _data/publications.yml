@@ -119,8 +119,15 @@
   role: contributing
   kind: review
   topics: [cell-therapy]
-  image: /assets/img/pubs/csc-2023.svg
-  image_alt: "Stem cell sources are engineered and differentiated into T, NK, iNKT cells and macrophages for the clinic."
+  image: /assets/img/pubs/csc-2023.png
+  image_width: 1536
+  image_height: 1024
+  image_alt: "Engineered HSC and PSC platforms can produce T cells, NK cells, innate-like T cells and macrophages with antitumor functions; cryovials illustrate the goal of scalable cell therapy."
+  graphic_caption: >-
+    Stem-cell engineering combines genetic modification and directed differentiation to develop diverse antitumor immune-cell platforms.
+    HSCs and PSCs offer alternative starting sources for products such as T cells, NK cells, innate-like T cells and macrophages.
+    This review highlights their potential for scalable, off-the-shelf immunotherapy, with platform-specific challenges in safety, immune compatibility and persistence.
+    Conceptual synthesis of a review; the depicted cell types represent separate platforms, not a combined product or uniformly clinically validated therapies.
   summary: >-
     A review of how engineered stem cells can supply scalable, off-the-shelf immune-cell therapies: cell sources,
     gene engineering, manufacturing, therapeutic platforms, and clinical trials.
