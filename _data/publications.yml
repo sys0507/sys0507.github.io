@@ -184,10 +184,15 @@
   role: first
   kind: article
   topics: [imaging]
-  image: /assets/img/pubs/bpj-2022.svg
-  image_alt: "Receptor nanoclusters stay apart with mobile ligands and overlap at their interface with immobile ligands, giving a stronger signal."
+  image: /assets/img/pubs/bpj-2022.png
+  image_width: 1536
+  image_height: 1024
+  image_alt: "TIRF-STORM, ToMATo clustering and CBC reveal greater overlap between MyD88 and pSyk nanoclusters and stronger macrophage signaling with lower ligand mobility."
+  graphic_caption: >-
+    Computational analysis of super-resolution images reveals how ligand mobility regulates FcγR–TLR2/1 crosstalk. IgG and Pam3 are presented on supported lipid bilayers at matched ligand densities but different lateral mobilities. Two-color TIRF-STORM maps MyD88 and pSyk, used as activation readouts for TLR2/1 and FcγR, respectively. ToMATo identifies nanoclusters, and coordinate-based colocalization (CBC) quantifies overlap between their localized signals. With lower ligand mobility, distinct nanoclusters develop more overlap at their interfaces. Complementary TIRF kernel-density and nearest-neighbor statistics support their organization into signalosomes. Greater interface overlap accompanies stronger phosphotyrosine signaling and inflammatory cytokine secretion.
+    Imaging and phosphotyrosine measurements were performed in RAW264.7 macrophages after 30 min of stimulation. Separate 6 h ELISAs measured TNF in RAW264.7 cells and TNF plus IL-12 in primary murine bone marrow-derived macrophages. Cluster maps are conceptual; spatial overlap supports cluster-scale crosstalk without establishing direct molecular binding. Low mobility denotes reduced, not abolished, ligand diffusion.
   summary: >-
-    When ligands on a model pathogen membrane can't move, FcγR and TLR2/1 nanoclusters overlap more at their
+    When ligands on a model pathogen membrane move less, FcγR and TLR2/1 nanoclusters overlap more at their
     interface, and macrophages mount a stronger inflammatory response — a physical way to tune immunity.
 
 - key: jcs-2021
