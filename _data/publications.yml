@@ -164,8 +164,13 @@
   role: first
   kind: article
   topics: [imaging]
-  image: /assets/img/pubs/jpcb-2022.svg
-  image_alt: "Two-color super-resolution image: Dectin-1 and TLR2 nanoclusters partially overlap on a macrophage membrane."
+  image: /assets/img/pubs/jpcb-2022.png
+  image_width: 1536
+  image_height: 1024
+  image_alt: "Computational spatial analysis of two-color dSTORM reveals partially overlapping Dectin-1 and TLR2 nanoclusters with stronger signaling."
+  graphic_caption: >-
+    Computational spatial analysis turns two-color dSTORM localizations into a quantitative map of innate immune receptor crosstalk. After localization correction and filtering, ToMATo identifies Dectin-1 and TLR2 nanoclusters; nearest-neighbor analysis and simulation-validated coordinate-based colocalization (CBC) quantify their spatial relationship. In RAW264.7 macrophages co-stimulated with Pam3 and curdlan for 10 min, the receptor populations remain organized in distinct, partially overlapping nanoclusters. Approximately 35% of clustered localizations meet the colocalization criterion (DoC ≥ 0.4). Separate measurements of TLR2–MyD88 and Dectin-1–pSyk colocalization indicate increased receptor activation, accompanied by stronger phosphotyrosine signaling.
+    Localization maps are conceptual illustrations, not experimental data. The results support a model of crosstalk at nanocluster interfaces; direct molecular interactions within those interfaces remain to be established. The study used RAW264.7 cells stably expressing GFP-Dectin-1.
   summary: >-
     Two-color single-molecule super-resolution imaging showed that Dectin-1 and TLR2 form separate nanoclusters that
     partially overlap during synergistic signaling, rather than mixing into one complex.
