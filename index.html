@@ -65,7 +65,7 @@ scripts: [/assets/js/fig0.js]
     <p class="section-lede">Models and software I’ve built to shorten the distance from sequencer to decision.</p>
   </header>
   <div class="project-list">
-    {%- for pr in projects limit: 3 %}
+    {%- for pr in projects %}
       {% include project-row.html project=pr %}
     {%- endfor %}
   </div>
