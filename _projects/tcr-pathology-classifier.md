@@ -6,6 +6,7 @@ order: 2
 channel: merge
 period: "Sep 2025 – Mar 2026"
 role: "Built it end to end: data, modeling, deployment, and validation"
+keywords: [Transformer, TCR Discovery, NGS]
 stack: [PyTorch, ESM2, Hugging Face, Flask, pandas, scikit-learn]
 cover: /assets/img/projects/tcr-classifier.png
 cover_alt: "Hand-drawn graphic: 6,737 clones go into a fine-tuned ESM2 model with alpha/beta cross-attention, and 11 of 31 selected clones are confirmed, a 35% hit rate; repertoire to shortlist drops from 8 weeks to 10 days."

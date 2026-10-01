@@ -1,11 +1,14 @@
 {%- comment -%}
   Renders a project's `stack` list as small pills with a category icon and colour.
-  Usage: {% include stack-chips.html items=pr.stack %}
-  Categories: lang (code, magenta) · web (magenta) · agent / ml (violet) · data / bio (cyan) · infra (slate).
-  Unknown keywords fall back to a neutral dot, so any new stack item still renders.
+  Usage: {% include stack-chips.html items=pr.stack extra=pr.keywords %}
+  `extra` (optional) are topic keywords, shown first; `items` are the tools.
+  Colours: magenta = code and methods · violet = agents and models · cyan = biology and data · slate = infrastructure.
+  Unknown keywords fall back to a neutral dot, so any new item still renders.
 {%- endcomment -%}
-<ul class="stack" role="list" aria-label="Built with">
-  {%- for item in include.items -%}
+{%- assign all = include.items -%}
+{%- if include.extra -%}{%- assign all = include.extra | concat: include.items -%}{%- endif -%}
+<ul class="stack" role="list" aria-label="Keywords and built with">
+  {%- for item in all -%}
     {%- assign key = item | downcase -%}
     {%- case key -%}
       {%- when 'python', 'r', 'typescript', 'node.js', 'markdown' -%}{%- assign kind = 'lang' -%}
@@ -15,6 +18,17 @@
       {%- when 'pandas', 'seurat', 'scanpy' -%}{%- assign kind = 'data' -%}
       {%- when 'scrna-seq', 'sctcr-seq' -%}{%- assign kind = 'bio' -%}
       {%- when 'slurm', 'hpc' -%}{%- assign kind = 'infra' -%}
+      {%- when 'harness' -%}{%- assign kind = 'guard' -%}
+      {%- when 'transformer' -%}{%- assign kind = 'layers' -%}
+      {%- when 'vibe coding' -%}{%- assign kind = 'vibe' -%}
+      {%- when 'spec-driven development (sdd)' -%}{%- assign kind = 'spec' -%}
+      {%- when 'test-driven development (tdd)' -%}{%- assign kind = 'tdd' -%}
+      {%- when 'tcr discovery' -%}{%- assign kind = 'search' -%}
+      {%- when 'ngs' -%}{%- assign kind = 'dna' -%}
+      {%- when 'cell therapy discovery' -%}{%- assign kind = 'cell' -%}
+      {%- when 'stem cell-derived car-t' -%}{%- assign kind = 'stem' -%}
+      {%- when 'nkt cell' -%}{%- assign kind = 'nkt' -%}
+      {%- when 'cell chat' -%}{%- assign kind = 'chat' -%}
       {%- else -%}{%- assign kind = 'other' -%}
     {%- endcase -%}
   <li class="chip chip--{{ kind }}">
@@ -27,6 +41,17 @@
         {%- when 'data' -%}<path d="M3 13V8M8 13V3.5M13 13V6"/>
         {%- when 'bio' -%}<circle cx="4.5" cy="10.5" r="1.4" fill="currentColor" stroke="none"/><circle cx="8" cy="5" r="1.4" fill="currentColor" stroke="none"/><circle cx="11.5" cy="9.5" r="1.4" fill="currentColor" stroke="none"/><circle cx="7.5" cy="11.5" r="1.4" fill="currentColor" stroke="none"/><circle cx="11" cy="4.5" r="1.4" fill="currentColor" stroke="none"/>
         {%- when 'infra' -%}<rect x="2.5" y="2.5" width="11" height="4" rx="1.2"/><rect x="2.5" y="9.5" width="11" height="4" rx="1.2"/><path d="M5 4.5h.01M5 11.5h.01" stroke-width="2"/>
+        {%- when 'guard' -%}<path d="M8 2 3 4v4c0 3 2.1 5 5 6 2.9-1 5-3 5-6V4z"/><path d="m5.8 8.2 1.6 1.6 3-3.2"/>
+        {%- when 'layers' -%}<path d="m8 2.5 5.5 3L8 8.5l-5.5-3z"/><path d="m2.5 8.3 5.5 3 5.5-3M2.5 11l5.5 3 5.5-3"/>
+        {%- when 'vibe' -%}<path d="M1.5 8c1.4-4.2 2.8-4.2 4.2 0s2.8 4.2 4.2 0 2.8-4.2 4.6 0"/>
+        {%- when 'spec' -%}<path d="M4 2h5.5L12.5 5v9H4z"/><path d="M9.5 2v3h3M6 8h4.5M6 10.5h4.5"/>
+        {%- when 'tdd' -%}<circle cx="8" cy="8" r="5.7"/><path d="m5.5 8.2 1.8 1.8 3.3-3.6"/>
+        {%- when 'search' -%}<circle cx="7" cy="7" r="4.2"/><path d="m10.2 10.2 3.3 3.3"/>
+        {%- when 'dna' -%}<path d="M4.5 2c0 4 7 7 7 12M11.5 2c0 4-7 7-7 12M5.4 4.6h5.2M5.4 11.4h5.2"/>
+        {%- when 'cell' -%}<circle cx="8" cy="8" r="5.5"/><circle cx="8.6" cy="7.4" r="1.7" fill="currentColor" stroke="none"/>
+        {%- when 'stem' -%}<circle cx="8" cy="8" r="5.5" stroke-dasharray="2.2 1.8"/><circle cx="8" cy="8" r="1.9" fill="currentColor" stroke="none"/>
+        {%- when 'nkt' -%}<circle cx="8" cy="9" r="4.2"/><circle cx="8.5" cy="8.6" r="1.4" fill="currentColor" stroke="none"/><path d="M8 4.8V2M5 5.7 3.4 3.8M11 5.7l1.6-1.9"/>
+        {%- when 'chat' -%}<path d="M2.5 3h6.5v4.3H5.4L3.6 9V7.3h-1.1zM7.5 8.8h6v4.2h-1.1V14.7l-1.8-1.7H7.5z" stroke-width="1.3"/>
         {%- else -%}<circle cx="8" cy="8" r="2" fill="currentColor" stroke="none"/>
       {%- endcase -%}
     </svg>

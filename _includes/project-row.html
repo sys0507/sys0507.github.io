@@ -19,7 +19,7 @@
       {%- endfor %}
     </ul>
     {%- endif %}
-    {% include stack-chips.html items=pr.stack %}
+    {% include stack-chips.html items=pr.stack extra=pr.keywords %}
     <p class="project-links">
       <a href="{{ pr.url | relative_url }}">Read the case study<span class="visually-hidden">: {{ pr.title }}</span></a>
       {%- if pr.repo %}<a href="{{ pr.repo }}">Source on GitHub</a>{% endif -%}

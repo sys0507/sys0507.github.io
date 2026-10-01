@@ -6,6 +6,7 @@ order: 4
 channel: merge
 period: "2022 – 2026"
 role: "Co-first author; led the single-cell and transcriptomic analyses"
+keywords: [Cell Therapy Discovery, Stem Cell-derived CAR-T, NKT Cell, Cell Chat]
 stack: [scRNA-seq, scTCR-seq, Seurat, Scanpy, R, Python]
 cover: /assets/img/projects/car-t-car-nkt.png
 cover_width: 1536

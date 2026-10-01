@@ -219,14 +219,14 @@ main:focus { outline: none; }
   --c: var(--ink-3); --t: var(--plate);
   display: inline-flex; align-items: center; gap: .38rem;
   padding: .2rem .7rem .2rem .55rem; border-radius: 999px;
-  font-size: .84rem; font-weight: 550; line-height: 1.45; letter-spacing: .005em; color: var(--ink);
+  white-space: nowrap; font-size: .84rem; font-weight: 550; line-height: 1.45; letter-spacing: .005em; color: var(--ink);
   background: var(--t); border: 1px solid var(--rule);
   border-color: color-mix(in srgb, var(--c) 34%, transparent);
 }
 .chip svg { width: 14px; height: 14px; flex: none; color: var(--c); }
-.chip--lang, .chip--web { --c: var(--code); --t: var(--code-tint); }
-.chip--agent, .chip--ml { --c: var(--merge); --t: var(--merge-tint); }
-.chip--data, .chip--bio { --c: var(--research); --t: var(--research-tint); }
+.chip--lang, .chip--web, .chip--vibe, .chip--spec, .chip--tdd { --c: var(--code); --t: var(--code-tint); }
+.chip--agent, .chip--ml, .chip--guard, .chip--layers { --c: var(--merge); --t: var(--merge-tint); }
+.chip--data, .chip--bio, .chip--search, .chip--dna, .chip--cell, .chip--stem, .chip--nkt, .chip--chat { --c: var(--research); --t: var(--research-tint); }
 .chip--infra { --c: var(--ink-2); --t: var(--well); }
 .project-links { display: flex; flex-wrap: wrap; gap: .5rem 1.4rem; margin-top: 1rem; font-weight: 600; font-size: .96rem; }
 .project-links a { text-decoration-color: var(--research); text-decoration-thickness: 1.5px; }
