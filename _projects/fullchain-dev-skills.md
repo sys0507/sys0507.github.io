@@ -7,9 +7,9 @@ channel: code
 period: "2026"
 role: "Author and maintainer"
 stack: [Agent Skills, Claude Code, Python, MCP, Markdown]
-cover: /assets/img/projects/fullchain-skills.svg
-cover_alt: "A ring of eleven development stages from research to release, with gates marked where the workflow stops for a decision."
-cover_caption: "Eleven stages; the bars mark gates where the chain stops and waits for a person."
+cover: /assets/img/projects/fullchain-skills.png
+cover_alt: "Hand-drawn graphic: 21 agent skills chained from idea to release in four phases (discover, define, build and verify, learn and release), with gates that stop for approval and a retrospective that feeds the next run."
+cover_caption: "Idea to release: 21 skills, gated stages, and a retrospective that sharpens the next run."
 repo: "https://github.com/sys0507/FullChain-Dev-Skills-EN"
 video:
   src: /assets/video/FullChain-Dev-Skills.mp4
