@@ -8,9 +8,9 @@ period: "Mar – Aug 2026"
 role: "Architect and lead developer"
 stack: [Claude Agent SDK, MCP, TypeScript, React, Node.js, SLURM, HPC]
 status: "In use internally at AstraZeneca. Code and data are not public."
-cover: /assets/img/projects/ngs-agent.svg
-cover_alt: "Architecture: a scientist chats with the agent, which calls pipeline tools over MCP, waits for human approval, submits SLURM jobs, and returns results to a per-user sandbox with an audit log."
-cover_caption: "Architecture at a glance. Every job waits for a human approval before it reaches the cluster."
+cover: /assets/img/projects/ngs-agent.png
+cover_alt: "Hand-drawn graphic: a bench scientist chats with an AI agent that calls pipeline skills over MCP, waits for human approval, submits jobs to a SLURM cluster, and returns plots and tables to a private sandbox, with an audit log; request to submitted job in under 5 minutes."
+cover_caption: "Chat to cluster: every job waits for a human approval before it reaches the cluster."
 outcomes:
   - value: "< 5 min"
     label: "from request to submitted job, no command line"
