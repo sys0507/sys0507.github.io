@@ -7,11 +7,11 @@ channel: merge
 period: "2022 – 2026"
 role: "Co-first author; led the single-cell and transcriptomic analyses"
 stack: [scRNA-seq, scTCR-seq, Seurat, Scanpy, R, Python]
-cover: /assets/img/projects/car-t-car-nkt.webp
-cover_width: 1800
-cover_height: 1400
-cover_alt: "Hand-drawn schematic: a single-cell atlas of 274,878 cells and >3,200 receptor-ligand pairs follows PBMC-derived CAR-T and allogeneic, IL-15-enhanced CAR-NKT cells into an MSLN-targeted solid tumor. CAR-T cells are held back through TIGIT-CD112 and pair with anti-TIGIT; CAR-NKT cells stay at the tumor, are held back through CD96-CD155, and pair with anti-CD96. Flow cytometry, killing assays, and an ovarian xenograft validate the match."
-cover_caption: "Schematic summary of the study: single-cell discovery on the left, the matched checkpoint partner for each cell product on the right."
+cover: /assets/img/projects/car-t-car-nkt.png
+cover_width: 1536
+cover_height: 1024
+cover_alt: "Hand-drawn graphic: single-cell and TCR profiling of 274,878 cells and over 3,200 receptor-ligand pairs follows PBMC-derived CAR-T and stem cell-derived CAR-NKT cells into MSLN-targeted solid tumors. CAR-T cells are held back by TIGIT-CD112 and pair with anti-TIGIT; CAR-NKT cells home better, persist longer, are held back by CD96-CD155, and pair with anti-CD96. Each cell therapy gets its own checkpoint partner."
+cover_caption: "Cells to checkpoints: single-cell discovery on the left, the matched checkpoint partner for each cell product on the right."
 paper: "https://www.nature.com/articles/s41392-026-02602-x"
 outcomes:
   - value: "Homing"
