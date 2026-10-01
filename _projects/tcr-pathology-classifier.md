@@ -7,12 +7,15 @@ channel: merge
 period: "Sep 2025 – Mar 2026"
 role: "Built it end to end: data, modeling, deployment, and validation"
 stack: [PyTorch, ESM2, Hugging Face, Flask, pandas, scikit-learn]
-cover: /assets/img/projects/tcr-classifier.svg
-cover_alt: "Paired TRA and TRB CDR3 sequences pass through ESM2 encoders, cross-attention, and a classifier; a funnel shows 6,737 clones narrowed to 572, 31 tested, and 11 validated."
-cover_caption: "Model sketch and the MART-1 proof of concept."
+cover: /assets/img/projects/tcr-classifier.png
+cover_alt: "Hand-drawn graphic: 6,737 clones go into a fine-tuned ESM2 model with alpha/beta cross-attention, and 11 of 31 selected clones are confirmed, a 35% hit rate; repertoire to shortlist drops from 8 weeks to 10 days."
+cover_caption: "From 6,737 clones to a 35% validated hit rate."
 repo: "https://github.com/sys0507/TCR-Pathology-Classifier"
 demo: "https://huggingface.co/sys0507/tcr-pathology-classifier"
 demo_label: "Model on Hugging Face"
+video:
+  src: /assets/video/TCR-Pathology-Classifier-explainer.mp4
+  caption: "An introduction to the TCR Pathology Classifier."
 outcomes:
   - value: "35%"
     label: "validated hit rate among model-prioritized clones (11 of 31)"
@@ -21,6 +24,10 @@ outcomes:
   - value: "8 wk → 10 d"
     label: "from raw repertoire to a testable shortlist"
 ---
+
+## Project introduction
+
+{% include video.html video=page.video title=page.title %}
 
 ## The problem
 
