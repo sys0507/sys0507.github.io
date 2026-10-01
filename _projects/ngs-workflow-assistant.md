@@ -6,6 +6,7 @@ order: 1
 channel: code
 period: "Mar – Aug 2026"
 role: "Architect and lead developer"
+keywords: [Harness, Vibe Coding]
 stack: [Claude Agent SDK, MCP, TypeScript, React, Node.js, SLURM, HPC]
 status: "In use internally at AstraZeneca. Code and data are not public."
 cover: /assets/img/projects/ngs-agent.png

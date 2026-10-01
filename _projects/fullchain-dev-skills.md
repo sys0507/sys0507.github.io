@@ -6,6 +6,7 @@ order: 3
 channel: code
 period: "2026"
 role: "Author and maintainer"
+keywords: [Vibe Coding, Spec-Driven Development (SDD), Test-Driven Development (TDD)]
 stack: [Agent Skills, Claude Code, Python, MCP, Markdown]
 cover: /assets/img/projects/fullchain-skills.png
 cover_alt: "Hand-drawn graphic: 21 agent skills chained from idea to release in four phases (discover, define, build and verify, learn and release), with gates that stop for approval and a retrospective that feeds the next run."
