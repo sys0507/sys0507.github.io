@@ -12,6 +12,8 @@ cover_width: 1536
 cover_height: 1024
 cover_alt: "Hand-drawn graphic: single-cell and TCR profiling of 274,878 cells and over 3,200 receptor-ligand pairs follows PBMC-derived CAR-T and stem cell-derived CAR-NKT cells into MSLN-targeted solid tumors. CAR-T cells are held back by TIGIT-CD112 and pair with anti-TIGIT; CAR-NKT cells home better, persist longer, are held back by CD96-CD155, and pair with anti-CD96. Each cell therapy gets its own checkpoint partner."
 cover_caption: "Cells to checkpoints: single-cell discovery on the left, the matched checkpoint partner for each cell product on the right."
+thumb: /assets/img/projects/car-t-car-nkt-thumb.webp
+thumb_alt: "Project card graphic: CAR-T and CAR-NKT cells feed single-cell bioinformatics (scRNA-seq and scTCR-seq) across tissues and time, which matches CAR-T with anti-TIGIT and CAR-NKT with anti-CD96 against a solid tumor."
 paper: "https://www.nature.com/articles/s41392-026-02602-x"
 outcomes:
   - value: "Homing"
