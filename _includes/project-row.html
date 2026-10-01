@@ -1,7 +1,11 @@
 {%- assign pr = include.project -%}
 <article class="project-row channel-{{ pr.channel }}">
   <a class="project-fig" href="{{ pr.url | relative_url }}" tabindex="-1" aria-hidden="true">
+    {%- if pr.thumb %}
+    <img src="{{ pr.thumb | relative_url }}" alt="{{ pr.thumb_alt | default: pr.cover_alt | escape }}" width="1536" height="1024" {% if include.eager %}fetchpriority="high"{% else %}loading="lazy"{% endif %} decoding="async">
+    {%- else %}
     <img src="{{ pr.cover | relative_url }}" alt="{{ pr.cover_alt | escape }}" width="{{ pr.cover_width | default: 640 }}" height="{{ pr.cover_height | default: 400 }}" {% if include.eager %}fetchpriority="high"{% else %}loading="lazy"{% endif %} decoding="async">
+    {%- endif %}
   </a>
   <div class="project-body">
     <p class="project-meta"><span class="channel-tag">{% case pr.channel %}{% when 'code' %}Code{% when 'merge' %}Research + code{% else %}Research{% endcase %}</span><span class="period">{{ pr.period }}</span></p>

@@ -11,6 +11,8 @@ status: "In use internally at AstraZeneca. Code and data are not public."
 cover: /assets/img/projects/ngs-agent.png
 cover_alt: "Hand-drawn graphic: a bench scientist chats with an AI agent that calls pipeline skills over MCP, waits for human approval, submits jobs to a SLURM cluster, and returns plots and tables to a private sandbox, with an audit log; request to submitted job in under 5 minutes."
 cover_caption: "Chat to cluster: every job waits for a human approval before it reaches the cluster."
+thumb: /assets/img/projects/ngs-agent-thumb.webp
+thumb_alt: "Project card graphic: a scientist's natural-language request reaches an AI agent with TCR, antibody and repertoire pipeline skills; after human approval the job runs on a SLURM cluster and results return privately, with user isolation and an audit trail."
 outcomes:
   - value: "< 5 min"
     label: "from request to submitted job, no command line"

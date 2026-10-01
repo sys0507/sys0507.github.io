@@ -28,6 +28,7 @@ Custom domain later? Add it under Settings → Pages and change `url` in `_confi
 | Pin a post to the top of the Notebook page | add `pinned: true` to its front matter |
 | Post a paper reading (explainer of a paper) | use `format: video` (or `article`) and add `filters: [paper, note]` so it also shows under Papers and Notes |
 | Add a paper | add a block at the top of `_data/publications.yml` and a graphic in `assets/img/pubs/` |
+| Give a project a different list card image | add `thumb:` and `thumb_alt:` (1536×1024) to the project; the case-study page keeps using `cover:` |
 | Add a project | add `_projects/my-project.md` and a cover in `assets/img/projects/` |
 | Change jobs, education, skills | `_data/experience.yml`, `_data/education.yml`, `_data/skills.yml` |
 | Change links, email, bio note | `_config.yml` |

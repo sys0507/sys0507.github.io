@@ -10,6 +10,8 @@ stack: [PyTorch, ESM2, Hugging Face, Flask, pandas, scikit-learn]
 cover: /assets/img/projects/tcr-classifier.png
 cover_alt: "Hand-drawn graphic: 6,737 clones go into a fine-tuned ESM2 model with alpha/beta cross-attention, and 11 of 31 selected clones are confirmed, a 35% hit rate; repertoire to shortlist drops from 8 weeks to 10 days."
 cover_caption: "From 6,737 clones to a 35% validated hit rate."
+thumb: /assets/img/projects/tcr-classifier-thumb.webp
+thumb_alt: "Project card graphic: TRA and TRB CDR3 sequences and V genes pass through fine-tuned ESM2 to rank disease-reactive TCR candidates, with 11 of 31 confirmed in a MART-1 proof of concept."
 repo: "https://github.com/sys0507/TCR-Pathology-Classifier"
 demo: "https://huggingface.co/sys0507/tcr-pathology-classifier"
 demo_label: "Model on Hugging Face"

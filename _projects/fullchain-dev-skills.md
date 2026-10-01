@@ -10,6 +10,8 @@ stack: [Agent Skills, Claude Code, Python, MCP, Markdown]
 cover: /assets/img/projects/fullchain-skills.png
 cover_alt: "Hand-drawn graphic: 21 agent skills chained from idea to release in four phases (discover, define, build and verify, learn and release), with gates that stop for approval and a retrospective that feeds the next run."
 cover_caption: "Idea to release: 21 skills, gated stages, and a retrospective that sharpens the next run."
+thumb: /assets/img/projects/fullchain-skills-thumb.webp
+thumb_alt: "Project card graphic: a workflow orchestrator coordinates 21 skills across 11 stages, Discover, Define, Build and Verify, and Learn and Release, with human review gates and lessons feeding the next run."
 repo: "https://github.com/sys0507/FullChain-Dev-Skills-EN"
 video:
   src: /assets/video/FullChain-Dev-Skills.mp4
