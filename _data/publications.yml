@@ -272,6 +272,9 @@
   image: /assets/img/pubs/nanolett-2015.png
   image_width: 1536
   image_height: 1024
+  video: /assets/videos/publications/nanolett-2015-explainer.mp4
+  video_poster: /assets/img/pubs/nanolett-2015-video-poster.png
+  video_caption: "59-second English explainer of the original optical injection platform and its 2018 Janus nanopen extension. Conceptual animations."
   image_alt: "The 2015 optical platform positions and injects single gold nanoparticles into living CHO cells, supported by force and heat calculations. The 2018 inset shows a gold-tip, ssDNA-bearing alumina nanopen, followed by 1064 nm near-infrared optical tweezer positioning depicted in red and 532 nm green-light injection."
   graphic_caption: >-
     Optical printing followed by optical injection enables controlled delivery of individual gold nanoparticles into living CHO cells. In the 2015 study, a 532 nm continuous-wave laser first positions 80 nm gold particles on the cell membrane with its focus below the cell. After excess particles are rinsed away, the beam is refocused onto a selected particle. Force and heat calculations, together with observed nanobubble formation, support a mechanism in which localized membrane disruption and optical scattering force enable particle entry. Selective etching of extracellular gold and a scattering-spectrum red shift support intracellular localization. The reported survival above 70% refers to post-injection cell viability under single-particle conditions, not delivery efficiency or the combined printing-and-injection yield.
