@@ -11,7 +11,7 @@ video:
   duration: "8:59"
   caption: "Narrated, with captions. The illustrated reading note and runnable code are below."
 image: /assets/img/notebook/virtual-biotech/abstract.png
-image_alt: "Graphic: a central AI orchestrator (the virtual CSO) connected to four colored division agents, with a field of 37,075 small agent squares behind it; title Virtual Biotech."
+image_alt: "Hand-drawn graphic: a crowned AI robot, the virtual CSO, leads four colored division robots (target, safety, modality, clinical) that share a box of MCP tools, while a red magnifier, the reviewer, reports back to the CSO."
 ---
 
 *A reading note on Zhang, Eckmann, Miao, Mahon & Zou, "The Virtual Biotech: A multi-agent AI framework for therapeutic discovery and development", Science (2026), [doi:10.1126/science.aeg6779](https://doi.org/10.1126/science.aeg6779), and its 89-page supplement.*
