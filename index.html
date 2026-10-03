@@ -6,13 +6,12 @@ scripts: [/assets/js/fig0.js]
 ---
 {%- include jsonld-person.html -%}
 {%- assign pubs = site.data.publications -%}
-{%- assign n_first = 0 -%}{%- for p in pubs -%}{%- if p.role == 'first' or p.role == 'co-first' -%}{%- assign n_first = n_first | plus: 1 -%}{%- endif -%}{%- endfor -%}
 {%- assign projects = site.projects | sort: "order" -%}
 
 <section class="hero wrap" aria-labelledby="hero-name">
   <div class="hero-text">
     <h1 class="hero-name" id="hero-name" translate="no">Miao Li</h1>
-    <p class="hero-role">Senior Scientist at AstraZeneca, working at the interface of immunology, computational biology, and AI-enabled software engineering.</p>
+    <p class="hero-role">Scientist working at the interface of cell therapy, computational biology, and AI-enabled drug discovery.</p>
     <p class="hero-bio">I bridge experimental and computational discovery. I build AI-powered platforms, deep learning models, and multi-omics and immune-repertoire pipelines that turn single-cell and NGS data into translational insight for TCR and cell therapy discovery, and I test what they predict with my own hands at the bench.</p>
     <dl class="hero-duo">
       <div class="duo-wet"><dt>Wet lab</dt><dd>Immunology, CAR-T and TCR-T cell engineering, stem cell-derived T cells, antigen-specific TCR screening</dd></div>
@@ -46,17 +45,6 @@ scripts: [/assets/js/fig0.js]
     </ol>
     <script type="application/json" id="fig0-data">{{ site.data.fig0 | jsonify }}</script>
   </figure>
-</section>
-
-<section class="wrap brief" aria-labelledby="brief-h">
-  <h2 id="brief-h" class="visually-hidden">In brief</h2>
-  <dl class="brief-grid">
-    <div><dt>Now</dt><dd>{{ site.author.job_title }}, {{ site.author.affiliation }}, since 2023</dd></div>
-    <div><dt>Focus</dt><dd>CAR-T and TCR discovery, NGS and single-cell bioinformatics, deep learning, AI agents</dd></div>
-    <div><dt>Builds with</dt><dd>Python, PyTorch, R, TypeScript, Claude Agent SDK and MCP, SLURM on HPC</dd></div>
-    <div><dt>Published</dt><dd>{{ pubs | size }} papers, {{ n_first }} as first or co-first author, incl. <i>Cell</i>, <i>Nature Biotechnology</i>, <i>Science Advances</i></dd></div>
-    <div><dt>Trained</dt><dd>Ph.D. Biophysics, LMU Munich; postdocs at UCLA and Indiana University</dd></div>
-  </dl>
 </section>
 
 <section class="wrap section" id="projects" aria-labelledby="projects-h">
@@ -96,9 +84,9 @@ scripts: [/assets/js/fig0.js]
     {%- for po in site.posts limit: 3 %}{% include post-item.html post=po %}{% endfor %}
   </ol>
   {%- else %}
-  <p class="empty">The first post is on its way. Subscribe via <a href="{{ '/feed.xml' | relative_url }}">RSS</a> to catch it.</p>
+  <p class="empty">The first post is on its way.</p>
   {%- endif %}
-  <p class="section-more"><a href="{{ '/notebook/' | relative_url }}">All posts</a> <a href="{{ '/feed.xml' | relative_url }}">RSS feed</a></p>
+  <p class="section-more"><a href="{{ '/notebook/' | relative_url }}">All posts</a></p>
 </section>
 
 <section class="wrap section" id="path" aria-labelledby="path-h">
@@ -111,7 +99,7 @@ scripts: [/assets/js/fig0.js]
     <li>
       <p class="tl-years">{{ x.start }} – {{ x.end }}</p>
       <div class="tl-body">
-        <h3>{{ x.role }}, {{ x.org }}</h3>
+        <h3>{{ x.role }} | {{ x.org }}</h3>
         <p>{{ x.summary }}</p>
       </div>
     </li>

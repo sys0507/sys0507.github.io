@@ -4,7 +4,7 @@
   place: "Gaithersburg, Maryland"
   start: "2023"
   end: "Present"
-  summary: "TCR discovery, immune-repertoire and single-cell pipelines, and AI tooling for the biologics discovery teams."
+  summary: "TCR discovery, immune-repertoire and single-cell pipelines, deep learning for biology discovery, AI tooling for NGS analysis."
   highlights:
     - "Architect and lead developer of an AI agent that turns natural-language requests into SLURM-orchestrated NGS pipelines, giving wet-lab scientists self-serve analysis."
     - "Built and maintain immune-repertoire and bulk/single-cell RNA-seq pipelines supporting Oncology and Respiratory & Immunology research."

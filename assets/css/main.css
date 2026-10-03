@@ -105,6 +105,8 @@ main:focus { outline: none; }
 .profile-links { list-style: none; padding: 0; margin: 1.6rem 0 0; display: flex; flex-wrap: wrap; gap: .5rem 1.4rem; }
 .profile-links a { color: var(--ink-2); font-weight: 500; text-decoration-color: var(--rule-strong); }
 .profile-links a:hover { color: var(--research); text-decoration-color: currentColor; }
+.profile-links a, .footer-links a, .cv-contact a { display: inline-flex; align-items: center; gap: .5rem; }
+.icon { width: 1.15em; height: 1.15em; flex: none; fill: var(--research); }
 .hero-actions { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: 2rem; }
 
 .channel-tag { display: inline-flex; align-items: center; gap: .45rem; font-size: .85rem; font-weight: 600; color: var(--ink-2); }
@@ -169,16 +171,6 @@ main:focus { outline: none; }
 .f0-axis { stroke: var(--ink-3); stroke-width: 1.2; fill: none; }
 .f0-axis-label { font: 500 10.5px var(--font-sans); fill: var(--ink-3); }
 .f0-traj-group, .f0-labels { transition: opacity .6s ease; }
-
-/* ---------- brief ---------- */
-.brief { margin-top: clamp(3rem, 6vw, 4.5rem); }
-.brief-grid {
-  margin: 0; display: grid; gap: 1.25rem 1.75rem;
-  grid-template-columns: repeat(auto-fit, minmax(10.5rem, 1fr));
-  background: var(--well); border-radius: 16px; padding: 1.5rem clamp(1.25rem, 3vw, 2rem);
-}
-.brief-grid dt { font-size: .84rem; font-weight: 600; color: var(--ink-3); margin-bottom: .25rem; }
-.brief-grid dd { margin: 0; font-size: .98rem; line-height: 1.45; }
 
 /* ---------- sections ---------- */
 .section { margin-top: var(--section-gap); }
@@ -317,7 +309,6 @@ html:has(.lightbox[open]) { overflow: hidden; }
 .filter-bar button:hover { border-color: var(--ink); color: var(--ink); }
 .filter-bar button[aria-pressed="true"] { background: var(--ink); border-color: var(--ink); color: var(--bg); }
 .filter-bar .count { font-variant-numeric: tabular-nums; opacity: .7; margin-left: .15rem; }
-.filter-aside { margin-left: auto; font-size: .92rem; font-weight: 600; }
 
 /* ---------- notebook list ---------- */
 .post-list { list-style: none; padding: 0; margin: 0; }
@@ -470,7 +461,6 @@ html:has(.lightbox[open]) { overflow: hidden; }
 
 @media (max-width: 40rem) {
   .site-nav { order: 3; width: 100%; margin-left: 0; overflow-x: auto; gap: 1.4rem; padding-bottom: .1rem; }
-  .filter-aside { margin-left: 0; }
 }
 
 @media print {
