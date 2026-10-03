@@ -71,10 +71,6 @@ kramdown:
 plugins:
   - jekyll-seo-tag
   - jekyll-sitemap
-  - jekyll-feed
-
-feed:
-  path: feed.xml
 
 exclude:
   - README.md

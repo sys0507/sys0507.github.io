@@ -9,15 +9,15 @@ body_class: cv-page
 <div class="wrap cv">
   <header class="page-head cv-head">
     <h1>{{ site.author.name }}, {{ site.author.honorific }}</h1>
-    <p class="page-lede">Senior Scientist working at the interface of AI-enabled software, computational biology, and immunology: deep learning models, AI agents, and single-cell and immune-repertoire pipelines for TCR discovery and cell therapy, grounded in hands-on CAR-T and TCR-T engineering.</p>
+    <p class="page-lede">Scientist working at the interface of AI-enabled drug discovery, computational biology, and immunology: deep learning models, AI agents, and single-cell and immune-repertoire pipelines for TCR discovery and cell therapy, grounded in hands-on CAR-T and TCR-T engineering.</p>
     <p class="hero-actions no-print">
       <button class="btn" type="button" data-print>Print this page</button>
     </p>
     <p class="cv-contact">
-      <a href="mailto:{{ site.author.email }}">{{ site.author.email }}</a>
-      <a href="{{ site.links.linkedin }}">LinkedIn</a>
-      <a href="{{ site.links.github }}">GitHub</a>
-      <a href="{{ site.links.scholar }}">Google Scholar</a>
+      <a href="mailto:{{ site.author.email }}">{% include icon.html name="email" %}{{ site.author.email }}</a>
+      <a href="{{ site.links.linkedin }}">{% include icon.html name="linkedin" %}LinkedIn</a>
+      <a href="{{ site.links.github }}">{% include icon.html name="github" %}GitHub</a>
+      <a href="{{ site.links.scholar }}">{% include icon.html name="scholar" %}Google Scholar</a>
     </p>
   </header>
 

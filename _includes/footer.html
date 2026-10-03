@@ -1,16 +1,12 @@
 <footer class="site-footer">
   <div class="wrap footer-inner">
-    <div>
-      <p class="footer-name">{{ site.author.name }}, {{ site.author.honorific }}</p>
-      <p class="muted">{{ site.author.job_title }}, {{ site.author.affiliation }}. Views here are my own.</p>
-    </div>
+    <p class="footer-name">{{ site.author.name }}, {{ site.author.honorific }}</p>
     <ul class="footer-links" role="list">
-      {%- if site.author.email %}<li><a href="mailto:{{ site.author.email }}">Email</a></li>{% endif %}
-      {%- if site.links.scholar %}<li><a href="{{ site.links.scholar }}" rel="me">Google Scholar</a></li>{% endif %}
-      {%- if site.links.github %}<li><a href="{{ site.links.github }}" rel="me">GitHub</a></li>{% endif %}
-      {%- if site.links.linkedin %}<li><a href="{{ site.links.linkedin }}" rel="me">LinkedIn</a></li>{% endif %}
-      {%- if site.links.youtube != "" and site.links.youtube %}<li><a href="{{ site.links.youtube }}" rel="me">YouTube</a></li>{% endif %}
-      <li><a href="{{ '/feed.xml' | relative_url }}">RSS</a></li>
+      {%- if site.links.scholar %}<li><a href="{{ site.links.scholar }}" rel="me">{% include icon.html name="scholar" %}Google Scholar</a></li>{% endif %}
+      {%- if site.links.github %}<li><a href="{{ site.links.github }}" rel="me">{% include icon.html name="github" %}GitHub</a></li>{% endif %}
+      {%- if site.links.linkedin %}<li><a href="{{ site.links.linkedin }}" rel="me">{% include icon.html name="linkedin" %}LinkedIn</a></li>{% endif %}
+      {%- if site.links.youtube != "" and site.links.youtube %}<li><a href="{{ site.links.youtube }}" rel="me">{% include icon.html name="youtube" %}YouTube</a></li>{% endif %}
+      {%- if site.author.email %}<li><a href="mailto:{{ site.author.email }}">{% include icon.html name="email" %}Email</a></li>{% endif %}
     </ul>
     <p class="colophon muted">© {{ site.time | date: '%Y' }} {{ site.author.name }}. Built with Jekyll, hosted on GitHub Pages. Abstract graphics are original schematics; see each paper for the published figures.</p>
   </div>
