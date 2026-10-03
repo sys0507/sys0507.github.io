@@ -75,7 +75,7 @@
     });
   });
 
-  /* ---------- publication graphic viewer (Research page) ---------- */
+  /* ---------- publication graphic viewer (Research page and home Research grid) ---------- */
   (function () {
     var dlg = document.querySelector("[data-lightbox-dialog]");
     if (!dlg || typeof dlg.showModal !== "function") return;   /* no support: links just open the image */

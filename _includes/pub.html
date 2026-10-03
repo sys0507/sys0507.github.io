@@ -5,11 +5,7 @@
 {%- capture href -%}{% if p.url %}{{ p.url }}{% else %}https://doi.org/{{ p.doi }}{% endif %}{%- endcapture -%}
 {%- capture tags -%}{% if p.role == 'first' or p.role == 'co-first' %}first {% endif %}{% for t in p.topics %}{{ t }} {% endfor %}{% if p.kind != 'article' %}review{% endif %}{%- endcapture -%}
 <article class="pub{% if include.compact %} pub--compact{% endif %}" data-tags="{{ tags | strip }}" id="{{ p.key }}"{% if p.video %} data-video="{{ p.video | relative_url }}"{% if p.video_poster %} data-video-poster="{{ p.video_poster | relative_url }}"{% endif %} data-video-caption="{{ p.video_caption | escape }}"{% endif %}>
-  {%- if include.compact %}
-  <a class="pub-fig" href="{{ href }}" tabindex="-1" aria-hidden="true">
-  {%- else %}
   <a class="pub-fig pub-fig--zoom" href="{{ p.image | relative_url }}" data-lightbox aria-haspopup="dialog" aria-label="Enlarge graphic and plain-English summary: {{ p.title | escape }}">
-  {%- endif %}
     <img src="{{ p.image | relative_url }}" alt="{{ p.image_alt | escape }}" width="{{ p.image_width | default: 640 }}" height="{{ p.image_height | default: 400 }}" loading="lazy" decoding="async">
   </a>
   <div class="pub-body">
@@ -36,6 +32,10 @@
     </p>
     {%- else %}
     <p class="pub-summary-short">{{ p.summary | truncatewords: 26 | smartify }}</p>
+    <div class="pub-summary" hidden>
+      <p>{{ p.summary | smartify }}</p>
+      <p class="fig-alt"><span>Graphic:</span> {{ p.graphic_caption | default: p.image_alt | escape }}</p>
+    </div>
     {%- endunless %}
   </div>
 </article>
