@@ -81,7 +81,7 @@ scripts: [/assets/js/fig0.js]
   </header>
   {%- if site.posts.size > 0 %}
   <ol class="post-list" role="list">
-    {%- for po in site.posts limit: 3 %}{% include post-item.html post=po %}{% endfor %}
+    {%- for po in site.posts limit: 3 %}{% include post-item.html post=po fig=true %}{% endfor %}
   </ol>
   {%- else %}
   <p class="empty">The first post is on its way.</p>
