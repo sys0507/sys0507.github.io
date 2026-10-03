@@ -16,6 +16,9 @@ cover_caption: "Cells to checkpoints: single-cell discovery on the left, the mat
 thumb: /assets/img/projects/car-t-car-nkt-thumb.webp
 thumb_alt: "Project card graphic: CAR-T and CAR-NKT cells feed single-cell bioinformatics (scRNA-seq and scTCR-seq) across tissues and time, which matches CAR-T with anti-TIGIT and CAR-NKT with anti-CD96 against a solid tumor."
 paper: "https://www.nature.com/articles/s41392-026-02602-x"
+video:
+  src: /assets/video/CAR-T-CAR-NKT-Profiling-explainer.mp4
+  caption: "An introduction to the CAR-T vs. CAR-NKT spatiotemporal profiling study."
 outcomes:
   - value: "Homing"
     label: "CAR-NKT cells infiltrated and localized in tumors better"
@@ -24,6 +27,10 @@ outcomes:
   - value: "TIGIT vs CD96"
     label: "a different checkpoint partner for each product"
 ---
+
+## Project introduction
+
+{% include video.html video=page.video title=page.title %}
 
 ## The question
 
