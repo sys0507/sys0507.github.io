@@ -172,6 +172,11 @@ main:focus { outline: none; }
 .f0-axis-label { font: 500 10.5px var(--font-sans); fill: var(--ink-3); }
 .f0-traj-group, .f0-labels { transition: opacity .6s ease; }
 
+/* ---------- intro video ---------- */
+.intro-video { margin-top: clamp(3rem, 6vw, 4.5rem); }
+.intro-video .video { max-width: 60rem; margin: 0 auto; }
+.intro-video .video-frame { background: var(--plate); border: 1px solid var(--rule); }
+
 /* ---------- sections ---------- */
 .section { margin-top: var(--section-gap); }
 .section-head { display: grid; gap: .6rem 3rem; margin-bottom: clamp(1.75rem, 4vw, 2.75rem); }

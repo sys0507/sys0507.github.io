@@ -3,6 +3,10 @@ layout: default
 body_class: home
 description: "Miao Li, Ph.D., Senior Scientist at AstraZeneca: protein language models for TCR discovery, AI agents for NGS pipelines, and single-cell cell-therapy research."
 scripts: [/assets/js/fig0.js]
+intro_video:
+  src: /assets/video/Miao-Li-Portrait.mp4
+  poster: /assets/img/miao-li-portrait-poster.jpg
+  caption: "My work in 30 seconds: Fig. 0 above, set in motion — physics, the bench, and code, merging into one practice."
 ---
 {%- include jsonld-person.html -%}
 {%- assign pubs = site.data.publications -%}
@@ -45,6 +49,10 @@ scripts: [/assets/js/fig0.js]
     </ol>
     <script type="application/json" id="fig0-data">{{ site.data.fig0 | jsonify }}</script>
   </figure>
+</section>
+
+<section class="wrap intro-video" aria-label="My work in 30 seconds">
+  {% include video.html video=page.intro_video title="Miao Li: my work in 30 seconds" %}
 </section>
 
 <section class="wrap section" id="projects" aria-labelledby="projects-h">
