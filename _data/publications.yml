@@ -67,6 +67,9 @@
   image: /assets/img/pubs/med-2025.png
   image_width: 1536
   image_height: 1024
+  video: /assets/videos/publications/med-2025-explainer.mp4
+  video_poster: /assets/img/pubs/med-2025-video-poster.png
+  video_caption: "59-second English research explainer: how patient bioinformatics informs CAR-NKT design, cell-state and immunogenicity analysis, and preclinical validation."
   image_alt: "Conceptual schematic of bioinformatics-guided allogeneic CAR-NKT design for ovarian cancer: CAR, NK receptors, and NKT TCR target tumor cells and the suppressive microenvironment, with cell-state analysis, immunogenicity studies, and preclinical validation."
   summary: >-
     Off-the-shelf CAR-NKT cells attacked ovarian tumors and their suppressive microenvironment through several
