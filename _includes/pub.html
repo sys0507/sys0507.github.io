@@ -4,7 +4,7 @@
 {%- assign p = include.pub -%}
 {%- capture href -%}{% if p.url %}{{ p.url }}{% else %}https://doi.org/{{ p.doi }}{% endif %}{%- endcapture -%}
 {%- capture tags -%}{% if p.role == 'first' or p.role == 'co-first' %}first {% endif %}{% for t in p.topics %}{{ t }} {% endfor %}{% if p.kind != 'article' %}review{% endif %}{%- endcapture -%}
-<article class="pub{% if include.compact %} pub--compact{% endif %}" data-tags="{{ tags | strip }}" id="{{ p.key }}">
+<article class="pub{% if include.compact %} pub--compact{% endif %}" data-tags="{{ tags | strip }}" id="{{ p.key }}"{% if p.video %} data-video="{{ p.video | relative_url }}"{% if p.video_poster %} data-video-poster="{{ p.video_poster | relative_url }}"{% endif %} data-video-caption="{{ p.video_caption | escape }}"{% endif %}>
   {%- if include.compact %}
   <a class="pub-fig" href="{{ href }}" tabindex="-1" aria-hidden="true">
   {%- else %}
@@ -23,6 +23,7 @@
       {%- if p.kind == 'review' %}<span class="badge badge--quiet">Review</span>{% endif -%}
       {%- if p.kind == 'perspective' %}<span class="badge badge--quiet">Perspective</span>{% endif -%}
       {%- if p.oa %}<span class="badge badge--quiet">Open access</span>{% endif -%}
+      {%- if p.video %}<a class="badge badge--video" href="{{ p.video | relative_url }}" data-pub-video aria-haspopup="dialog" aria-label="Watch video: {{ p.title | escape }}">Video</a>{% endif -%}
     </p>
     <details class="pub-summary">
       <summary>In plain English</summary>

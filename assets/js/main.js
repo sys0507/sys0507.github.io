@@ -83,6 +83,7 @@
     var img = q("[data-lb-img]"), title = q("[data-lb-title]"), venue = q("[data-lb-venue]");
     var summary = q("[data-lb-summary]"), link = q("[data-lb-link]"), count = q("[data-lb-count]");
     var full = q("[data-lb-full]");
+    var videoSection = q("[data-lb-video-section]"), video = q("[data-lb-video]");
     var prev = q("[data-lb-prev]"), next = q("[data-lb-next]");
     var current = null, opener = null;
 
@@ -103,6 +104,21 @@
       link.href = titleLink ? titleLink.href : "#";
       summary.innerHTML = "";
       pub.querySelectorAll(".pub-summary > p").forEach(function (p) { summary.appendChild(p.cloneNode(true)); });
+      video.pause();
+      var videoSrc = pub.getAttribute("data-video");
+      videoSection.hidden = !videoSrc;
+      if (videoSrc) {
+        video.src = videoSrc;
+        var poster = pub.getAttribute("data-video-poster");
+        if (poster) video.poster = poster; else video.removeAttribute("poster");
+        video.setAttribute("aria-label", "Research explainer: " + title.textContent);
+        q("[data-lb-video-caption]").textContent = pub.getAttribute("data-video-caption") || "";
+        q("[data-lb-video-download]").href = videoSrc;
+      } else {
+        video.removeAttribute("src");
+        video.removeAttribute("poster");
+      }
+      video.load();
       var list = visible(), i = list.indexOf(trigger);
       count.textContent = list.length > 1 ? (i + 1) + " / " + list.length : "";
       prev.hidden = next.hidden = list.length < 2;
@@ -123,17 +139,33 @@
         dlg.showModal();
       });
     });
+    document.querySelectorAll("[data-pub-video]").forEach(function (a) {
+      a.addEventListener("click", function (e) {
+        if (e.metaKey || e.ctrlKey || e.shiftKey || e.button === 1) return;
+        var trigger = a.closest(".pub").querySelector("[data-lightbox]");
+        if (!trigger) return;
+        e.preventDefault();
+        opener = a;
+        fill(trigger);
+        dlg.showModal();
+        video.focus({ preventScroll: true });
+        videoSection.scrollIntoView({ block: "start" });
+      });
+    });
     prev.addEventListener("click", function () { step(-1); });
     next.addEventListener("click", function () { step(1); });
     q("[data-lb-close]").addEventListener("click", function () { dlg.close(); });
     dlg.addEventListener("click", function (e) { if (e.target === dlg) dlg.close(); });   /* backdrop */
     dlg.addEventListener("keydown", function (e) {
+      if (e.target.closest("video")) return; /* keep native playback / seeking keys */
       if (e.key === "ArrowLeft") { e.preventDefault(); step(-1); }
       if (e.key === "ArrowRight") { e.preventDefault(); step(1); }
     });
     dlg.addEventListener("close", function () {
+      video.pause();
       /* return focus to the paper you ended on, not necessarily the one you opened */
       var back = (current && current.offsetParent) ? current : opener;
+      if (opener && current && opener.closest(".pub") === current.closest(".pub")) back = opener;
       if (back) { back.focus({ preventScroll: true }); back.scrollIntoView({ block: "nearest" }); }
     });
   })();

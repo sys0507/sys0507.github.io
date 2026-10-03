@@ -25,6 +25,9 @@
   image: /assets/img/pubs/sttt-2026.png
   image_width: 1536
   image_height: 1024
+  video: /assets/videos/publications/sttt-2026-explainer.mp4
+  video_poster: /assets/img/pubs/sttt-2026-video-poster.png
+  video_caption: "58-second research explainer in English: how single-cell bioinformatics guides matched checkpoint combinations. Preclinical evidence."
   image_alt: "Conceptual schematic linking spatiotemporal single-cell profiling to matched checkpoint therapies: CAR-T with anti-TIGIT and CAR-NKT with anti-CD96, followed by experimental validation in solid-tumor models."
   summary: >-
     We followed conventional CAR-T cells and stem cell-derived CAR-NKT cells across tissues and time in solid-tumor
