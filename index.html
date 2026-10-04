@@ -132,15 +132,35 @@ intro_video:
     <p class="section-lede">Half of it runs on a cluster, half of it in a biosafety cabinet.</p>
   </header>
   <div class="toolkit">
-    <div>
-      <h3>At the computer</h3>
-      <dl>{% for s in site.data.skills.computer %}<div><dt>{{ s.area }}</dt><dd>{{ s.items }}</dd></div>{% endfor %}</dl>
+    {%- for half in site.data.toolkit_halves %}
+    <div class="tk-col tk-col--{{ half.channel }}">
+      <h3>{{ half.title }}</h3>
+      <ul class="tk-cards" role="list">
+        {%- for sk in site.data.skills[half.key] %}
+        <li class="tk-card">
+          <span class="tk-icon" aria-hidden="true">{% include toolkit-icon.html name=sk.icon %}</span>
+          <div class="tk-body">
+            <h4>{{ sk.area }}</h4>
+            <p>{{ sk.summary }}</p>
+            <ul class="tk-tools" role="list">{% for t in sk.tools %}<li>{{ t }}</li>{% endfor %}</ul>
+          </div>
+        </li>
+        {%- endfor %}
+        {%- if half.key == "bench" %}{% for sk in site.data.skills.meet %}
+        <li class="tk-card tk-card--merge">
+          <span class="tk-icon" aria-hidden="true">{% include toolkit-icon.html name=sk.icon %}</span>
+          <div class="tk-body">
+            <h4>{{ sk.area }}</h4>
+            <p>{{ sk.summary }}</p>
+            <ul class="tk-tools" role="list">{% for t in sk.tools %}<li>{{ t }}</li>{% endfor %}</ul>
+          </div>
+        </li>
+        {%- endfor %}{% endif %}
+      </ul>
     </div>
-    <div>
-      <h3>At the bench</h3>
-      <dl>{% for s in site.data.skills.bench %}<div><dt>{{ s.area }}</dt><dd>{{ s.items }}</dd></div>{% endfor %}</dl>
-    </div>
+    {%- endfor %}
   </div>
+  <p class="section-more"><a href="{{ '/cv/' | relative_url }}#skills">Full detail in the CV</a></p>
 </section>
 
 <section class="wrap section" id="contact" aria-labelledby="contact-h">

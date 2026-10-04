@@ -1,0 +1,14 @@
+{%- comment -%} Line icons for the homepage Toolkit cards (24px grid, currentColor). {%- endcomment -%}
+<svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" focusable="false">
+{%- case include.name -%}
+{%- when "agent" -%}<path d="M12 3v4M12 17v4M3 12h4M17 12h4"/><path d="M12 7.5l1.4 3.1 3.1 1.4-3.1 1.4L12 16.5l-1.4-3.1L7.5 12l3.1-1.4z"/>
+{%- when "code" -%}<path d="M8 7l-5 5 5 5M16 7l5 5-5 5M13.5 5l-3 14"/>
+{%- when "ml" -%}<circle cx="5" cy="6" r="2"/><circle cx="5" cy="18" r="2"/><circle cx="19" cy="12" r="2"/><circle cx="12" cy="12" r="2"/><path d="M6.8 6.9l3.4 4.2M6.8 17.1l3.4-4.2M14 12h3"/>
+{%- when "data" -%}<path d="M4 20h16"/><path d="M7 16v-5M12 16V6M17 16v-8"/>
+{%- when "cell" -%}<circle cx="12" cy="12" r="7"/><circle cx="12.8" cy="11.2" r="2.4" fill="currentColor" stroke="none"/><path d="M12 5V2.5M17 7l1.8-1.8M19 12h2.5"/>
+{%- when "dna" -%}<path d="M7 3c0 6 10 8 10 18M17 3c0 6-10 8-10 18M8.3 6.5h7.4M8.3 17.5h7.4M10 12h4"/>
+{%- when "scope" -%}<path d="M10 3l4 0M12 3v3M9 6h6l-1 8h-4z"/><path d="M12 14v3M6 21h12M8 17h8"/><path d="M17 9.5c2 1 3 3 2.6 5.5"/>
+{%- when "merge" -%}<circle cx="9" cy="12" r="6"/><circle cx="15" cy="12" r="6"/><path d="M12 7.2a6 6 0 0 1 0 9.6a6 6 0 0 1 0-9.6z" fill="currentColor" fill-opacity=".35" stroke="none"/>
+{%- else -%}<circle cx="12" cy="12" r="3" fill="currentColor" stroke="none"/>
+{%- endcase -%}
+</svg>
