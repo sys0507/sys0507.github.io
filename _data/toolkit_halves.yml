@@ -1,0 +1,7 @@
+# Columns of the homepage Toolkit. channel picks the accent colour (code = magenta, research = cyan).
+- key: computer
+  title: "At the computer"
+  channel: code
+- key: bench
+  title: "At the bench"
+  channel: research
