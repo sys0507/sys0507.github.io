@@ -42,4 +42,4 @@ meet:
   - area: "Where they meet"
     icon: "merge"
     summary: "Models built at the computer, tested at the bench, and tools that bring the two together."
-    tools: ["TCR model picks → MART-1 validation (35%)", "scRNA/TCR-seq → matched checkpoint therapy", "ML image analysis → receptor nanoclusters", "AI agents → self-serve NGS for the lab"]
+    tools: ["TCR model picks → MART-1 validation (35%)", "scRNA/TCR-seq → CAR-T/TCR-T discovery", "ML image analysis → receptor nanoclusters", "AI agents → self-serve NGS for the lab"]
