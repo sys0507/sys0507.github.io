@@ -70,9 +70,17 @@ body_class: cv-page
 
   <section class="cv-section" id="skills" aria-labelledby="cv-skills">
     <h2 id="cv-skills">Skills</h2>
-    <div class="toolkit">
-      <div><h3>Computational</h3><dl>{% for s in site.data.skills.computer %}<div><dt>{{ s.area }}</dt><dd>{{ s.items }}</dd></div>{% endfor %}</dl></div>
-      <div><h3>Wet lab</h3><dl>{% for s in site.data.skills.bench %}<div><dt>{{ s.area }}</dt><dd>{{ s.items }}</dd></div>{% endfor %}</dl></div>
-    </div>
+    {%- assign halves = "computer:Computational:code,bench:Wet lab:research" | split: "," -%}
+    {%- for h in halves %}{% assign hp = h | split: ":" %}{% assign hk = hp[0] %}
+    <h3 class="cv-skill-group cv-skill-group--{{ hp[2] }}">{{ hp[1] }}</h3>
+    {%- for s in site.data.skills[hk] %}
+    <article class="cv-item cv-skill">
+      <h4>{{ s.area }}</h4>
+      {%- if s.cv %}
+      <dl>{% for r in s.cv %}<div><dt>{{ r[0] }}</dt><dd>{{ r[1] }}</dd></div>{% endfor %}</dl>
+      {%- else %}<p>{{ s.items }}</p>{% endif %}
+    </article>
+    {%- endfor %}
+    {%- endfor %}
   </section>
 </div>
