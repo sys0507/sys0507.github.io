@@ -42,7 +42,7 @@ body_class: cv-page
       <p class="cv-when">{{ pr.period }}</p>
       <div>
         <h3><a href="{{ pr.url | relative_url }}">{{ pr.title }}</a></h3>
-        <p>{{ pr.lede | smartify }}</p>
+        <p>{{ pr.cv_lede | default: pr.lede | smartify }}</p>
       </div>
     </article>
     {%- endfor %}
