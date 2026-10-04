@@ -37,3 +37,9 @@ bench:
     summary: "Seeing receptors, cells and animals, from single molecules up."
     tools: ["STORM", "Confocal", "TIRF", "Epifluorescence", "In vivo BLI", "SEM / TEM", "Single-molecule tracking", "ImageJ", "Nanopatterning", "Optical manipulation"]
     items: "Advanced microscopy (super-resolution STORM, confocal, TIRF, epi-fluorescence); bioluminescence imaging (BLI) for in vivo CAR-T tracking; electron microscopy (SEM, TEM) and single-molecule tracking; image analysis and quantification (ImageJ); nanopatterned surfaces and optical manipulation"
+# Homepage only: the card under "At the bench" where the two halves join (merge = violet).
+meet:
+  - area: "Where they meet"
+    icon: "merge"
+    summary: "Models built at the computer, tested at the bench, and tools that bring the two together."
+    tools: ["TCR model picks → MART-1 validation (35%)", "scRNA/TCR-seq → matched checkpoint therapy", "ML image analysis → receptor nanoclusters", "AI agents → self-serve NGS for the lab"]

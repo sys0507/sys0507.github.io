@@ -146,6 +146,16 @@ intro_video:
           </div>
         </li>
         {%- endfor %}
+        {%- if half.key == "bench" %}{% for sk in site.data.skills.meet %}
+        <li class="tk-card tk-card--merge">
+          <span class="tk-icon" aria-hidden="true">{% include toolkit-icon.html name=sk.icon %}</span>
+          <div class="tk-body">
+            <h4>{{ sk.area }}</h4>
+            <p>{{ sk.summary }}</p>
+            <ul class="tk-tools" role="list">{% for t in sk.tools %}<li>{{ t }}</li>{% endfor %}</ul>
+          </div>
+        </li>
+        {%- endfor %}{% endif %}
       </ul>
     </div>
     {%- endfor %}
