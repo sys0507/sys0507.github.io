@@ -237,6 +237,9 @@
   image: /assets/img/pubs/sciadv-2020.png
   image_width: 1536
   image_height: 1024
+  video: /assets/videos/publications/sciadv-2020-explainer.mp4
+  video_poster: /assets/img/pubs/sciadv-2020-video-poster.png
+  video_caption: "59-second English research explainer: nanopatterned Pam3 and IgG reveal how ligand spacing tunes macrophage signaling and reaches a spatial limit. In vitro study."
   image_alt: "A macrophage rests on an artificial phagocytic synapse of Pam3-coated gold nanodisks and IgG-coated glass. A schematic shows the spacing limit of TLR1/2 clusters and the TNF-alpha response plateau at close ligand spacing."
   summary: >-
     We built nanoarrays that mimic the contact zone between a macrophage and a microbe. Moving ligand clusters closer
