@@ -1,42 +1,75 @@
 # Two halves of the toolkit. Keep each item short; order = priority.
-# The homepage Toolkit shows icon + summary + tools; the CV Skills section shows area + items.
+# The homepage Toolkit shows icon + summary + tools; the CV Skills section shows area + cv rows ([label, text]).
+# `items` is the original one-paragraph version, kept as a fallback.
 computer:
   - area: "GenAI, agentic workflows & AI coding tools"
     icon: "agent"
     summary: "Multi-agent analytics workflows, with human approval, identity isolation and audit logging built in."
     tools: ["Claude Agent SDK", "Claude Code", "MCP", "Agent skills", "LangChain", "LangGraph", "RAG", "Spec-driven development"]
     items: "Multi-agent orchestration and end-to-end agentic workflow design for analytics tasks; LLM-based reasoning over study metadata and analysis requests; Claude Agent SDK, Claude Code, MCP, agent skills, LangChain/LangGraph, RAG; GenAI coding assistants applied to project planning, code development, code review, and scientific documentation under spec-driven development; human-in-the-loop approval, identity isolation, and audit logging for governed research environments"
+    cv:
+      - ["Methods", "Multi-agent orchestration and end-to-end agentic workflow design for analytics tasks; LLM-based reasoning over study metadata and analysis requests"]
+      - ["Tools", "Claude Agent SDK, Claude Code, MCP, agent skills, LangChain/LangGraph, RAG"]
+      - ["Practice", "GenAI coding assistants for project planning, code development, code review, and scientific documentation under spec-driven development"]
+      - ["Governance", "Human-in-the-loop approval, identity isolation, and audit logging for governed research environments"]
   - area: "Programming & reproducible analytics engineering"
     icon: "code"
     summary: "Reusable, tested, FAIR-aligned pipelines and production-grade web apps."
     tools: ["Python", "R", "Shell", "Linux", "Git / GitHub", "SLURM / HPC", "Flask", "TypeScript", "React", "Node.js", "Matplotlib", "ggplot2", "Tidyverse"]
     items: "Python (primary), R, Shell scripting, UNIX/Linux, Git/GitHub, SLURM/HPC clusters; reusable code libraries, version control, QC and reproducibility standards, and FAIR-aligned analytics pipelines built under spec- and test-driven development; production-grade web applications (Flask; full-stack TypeScript/React/Node); data visualization and reporting (Matplotlib, Seaborn, ggplot2, Tidyverse)"
+    cv:
+      - ["Languages", "Python (primary), R, Shell scripting, UNIX/Linux, Git/GitHub, SLURM/HPC clusters"]
+      - ["Practice", "Reusable code libraries, version control, QC and reproducibility standards, and FAIR-aligned analytics pipelines built under spec- and test-driven development"]
+      - ["Applications", "Production-grade web applications (Flask; full-stack TypeScript/React/Node)"]
+      - ["Visualization", "Data visualization and reporting (Matplotlib, Seaborn, ggplot2, Tidyverse)"]
   - area: "Statistical & machine learning methods"
     icon: "ml"
     summary: "From classic ML to fine-tuned foundation models, validated against held-out functional readouts."
     tools: ["PyTorch", "scikit-learn", "XGBoost", "Transformers", "Cross-attention", "CNN", "ESM2 fine-tuning", "PCA", "K-means", "DBSCAN"]
     items: "scikit-learn (logistic and linear regression, Random Forest, XGBoost, PCA, K-means, DBSCAN); PyTorch deep learning (Transformer, cross-attention, CNN, encoder-decoder); foundation-model fine-tuning (protein language models, ESM2); cohort stratification and endotype discovery; prospective benchmarking and independent validation of model predictions against held-out functional readouts"
+    cv:
+      - ["Classical ML", "scikit-learn (logistic and linear regression, Random Forest, XGBoost, PCA, K-means, DBSCAN)"]
+      - ["Deep learning", "PyTorch (Transformer, cross-attention, CNN, encoder-decoder); foundation-model fine-tuning (protein language models, ESM2)"]
+      - ["Applications", "Cohort stratification and endotype discovery; prospective benchmarking and independent validation of model predictions against held-out functional readouts"]
   - area: "Large-scale health data analysis"
     icon: "data"
     summary: "Patient-derived oncology and immune-disease datasets, from QC and integration to mechanism."
     tools: ["Bulk RNA-seq", "scRNA-seq", "scTCR-seq", "Immune repertoires", "Cell Ranger", "Scanpy", "Seurat", "MiXCR", "Pseudotime", "RNA velocity", "Cell–cell communication"]
     items: "Patient-derived oncology and immune-mediated-disease datasets at scale (bulk and single-cell RNA-seq, scTCR-seq, NGS immune-repertoire profiling; Cell Ranger, Scanpy/Seurat, MiXCR) spanning QC, harmonization, cross-study integration, cohort annotation, differential and pathway analysis, pseudotime and RNA velocity, cell–cell communication, and mechanism interpretation; cross-dataset mining, data suitability assessment, and large-scale multi-omics data management"
+    cv:
+      - ["Data", "Patient-derived oncology and immune-mediated-disease datasets at scale: bulk and single-cell RNA-seq, scTCR-seq, NGS immune-repertoire profiling"]
+      - ["Tools", "Cell Ranger, Scanpy, Seurat, MiXCR"]
+      - ["Analyses", "QC, harmonization, cross-study integration, cohort annotation, differential and pathway analysis, pseudotime and RNA velocity, cell–cell communication, and mechanism interpretation"]
+      - ["Data management", "Cross-dataset mining, data suitability assessment, and large-scale multi-omics data management"]
 bench:
   - area: "Cellular immunology & CAR-T engineering"
     icon: "cell"
     summary: "Primary and stem cell-derived immune cells, engineered and tested for function."
     tools: ["CAR-T", "TCR-T", "TCR screening", "iPSC → T cells", "HSC / iPSC culture", "PBMC, NK, iNKT", "Macrophages", "Flow cytometry", "ELISA", "xCELLigence", "Killing assays"]
     items: "Primary cell culture and expansion (HSCs, iPSCs, PBMCs, CAR-T, NK, iNKT, macrophage cells); CAR-T and TCR-T engineering and antigen-specific TCR screening; 2D/3D iPSC differentiation into effector T cells (e.g., CD8⁺ CAR-T); multicolor flow cytometry (phenotypic analysis of T-cell markers); ELISA (cytokine release profiling); cytotoxicity and viability assays (e.g., xCELLigence, plate reader-based killing assays)"
+    cv:
+      - ["Cell culture", "Primary cell culture and expansion (HSCs, iPSCs, PBMCs, CAR-T, NK, iNKT, macrophage cells); 2D/3D iPSC differentiation into effector T cells (e.g., CD8⁺ CAR-T)"]
+      - ["Engineering", "CAR-T and TCR-T engineering; antigen-specific TCR screening"]
+      - ["Assays", "Multicolor flow cytometry (phenotypic analysis of T-cell markers); ELISA (cytokine release profiling); cytotoxicity and viability assays (e.g., xCELLigence, plate reader-based killing assays)"]
   - area: "Molecular biology & gene editing"
     icon: "dna"
     summary: "The constructs and edits behind engineered cells."
     tools: ["CRISPR/Cas9 knock-in", "Lentivirus", "Gibson cloning", "PCR", "gDNA extraction", "Western blot"]
     items: "CRISPR/Cas9-mediated gene knock-in and editing; lentivirus production, packaging, and transduction (CAR-T engineering); molecular cloning (Gibson assembly); PCR, genomic DNA extraction, Western blot"
+    cv:
+      - ["Gene editing", "CRISPR/Cas9-mediated gene knock-in and editing"]
+      - ["Cloning", "Lentivirus production, packaging, and transduction (CAR-T engineering); molecular cloning (Gibson assembly)"]
+      - ["Assays", "PCR, genomic DNA extraction, Western blot"]
   - area: "Advanced analytics & imaging"
     icon: "scope"
     summary: "Seeing receptors, cells and animals, from single molecules up."
     tools: ["STORM", "Confocal", "TIRF", "Epifluorescence", "In vivo BLI", "SEM / TEM", "Single-molecule tracking", "ImageJ", "Nanopatterning", "Optical manipulation"]
     items: "Advanced microscopy (super-resolution STORM, confocal, TIRF, epi-fluorescence); bioluminescence imaging (BLI) for in vivo CAR-T tracking; electron microscopy (SEM, TEM) and single-molecule tracking; image analysis and quantification (ImageJ); nanopatterned surfaces and optical manipulation"
+    cv:
+      - ["Microscopy", "Super-resolution (STORM), confocal, TIRF, and epifluorescence microscopy; electron microscopy (SEM, TEM)"]
+      - ["Tracking", "Bioluminescence imaging (BLI) for in vivo CAR-T tracking; single-molecule tracking"]
+      - ["Analysis", "Image analysis and quantification (ImageJ)"]
+      - ["Biophysics", "Nanopatterned surfaces and optical manipulation"]
 # Homepage only: the card under "At the bench" where the two halves join (merge = violet).
 meet:
   - area: "Where they meet"

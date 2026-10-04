@@ -472,6 +472,19 @@ html:has(.lightbox[open]) { overflow: hidden; }
 .cv-pubs li + li { margin-top: .7rem; }
 .cv-pubs a { word-break: break-word; }
 
+/* CV skills: category | labelled rows */
+.cv-skill-group { font-size: 1.1rem; font-weight: 700; margin: 1.6rem 0 1rem; padding-left: .7rem; border-left: 4px solid var(--research); }
+.cv-skill-group:first-of-type { margin-top: 0; }
+.cv-skill-group--code { border-left-color: var(--code); }
+.cv-skill { margin-bottom: 1.25rem; }
+.cv-skill h4 { margin: 0; font-size: 1rem; font-weight: 700; line-height: 1.35; padding-top: .1rem; }
+@media (min-width: 44rem) { .cv-skill { grid-template-columns: 13rem minmax(0, 1fr); } }
+.cv-skill dl { margin: 0; display: grid; gap: .35rem; }
+.cv-skill dl > div { display: grid; gap: 0 1rem; }
+@media (min-width: 34rem) { .cv-skill dl > div { grid-template-columns: 8.5rem minmax(0, 1fr); } }
+.cv-skill dt { font-size: .8rem; font-weight: 650; letter-spacing: .04em; text-transform: uppercase; color: var(--ink-3); padding-top: .22rem; }
+.cv-skill dd { margin: 0; font-family: var(--font-serif); color: var(--ink-2); line-height: 1.55; }
+
 /* ---------- motion & print ---------- */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; scroll-behavior: auto !important; }
@@ -490,6 +503,8 @@ html:has(.lightbox[open]) { overflow: hidden; }
   .page-head h1 { font-size: 22pt; }
   .cv-section { margin-top: 14pt; break-inside: auto; }
   .cv-item { break-inside: avoid; grid-template-columns: 7rem 1fr; }
+  .cv-skill { grid-template-columns: 10rem 1fr; }
+  .cv-skill dl > div { grid-template-columns: 7rem 1fr; }
   a { text-decoration: none; }
 }
 
