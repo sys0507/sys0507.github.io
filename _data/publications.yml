@@ -48,6 +48,9 @@
   image: /assets/img/pubs/frontiers-2025.png
   image_width: 1536
   image_height: 1024
+  video: /assets/videos/publications/frontiers-2025-arkadia-explainer.mp4
+  video_poster: /assets/img/pubs/frontiers-2025-video-poster.jpg
+  video_caption: "59-second research explainer on Treg stability and the TGFβ–ARKADIA–SKI axis. Human Treg experiments in vitro."
   image_alt: "Bulk RNA-seq links TGFβ blockade and SKI overexpression to a shared Treg-instability program; public HL-60 SKI ChIP-seq prioritizes candidate targets, while ARKADIA overexpression preserves human naïve Treg identity and suppression in vitro."
   summary: >-
     TGFβ signaling keeps human regulatory T cells stable, and naïve and effector subsets depend on it differently.
