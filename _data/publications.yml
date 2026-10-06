@@ -89,6 +89,9 @@
   image: /assets/img/pubs/cell-2025.png
   image_width: 1536
   image_height: 1024
+  video: /assets/videos/publications/cell-2025-sert-explainer.mp4
+  video_poster: /assets/img/pubs/cell-2025-video-poster.jpg
+  video_caption: "58-second English research explainer: how SERT blockade supports antitumor T-cell activity, with bioinformatics, human tumor analyses, and preclinical validation."
   image_alt: "Bioinformatics and functional validation connect SERT blockade to enhanced CD8 T-cell activity: single-cell and human tumor analyses support the serotonin mechanism, while fluoxetine plus anti-PD-1 improves tumor control in mice."
   summary: >-
     Tumor-infiltrating CD8 T cells switch on the serotonin transporter SERT, which acts like an immune checkpoint.
