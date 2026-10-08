@@ -116,6 +116,8 @@
   image: /assets/img/pubs/nbt-2025.png
   image_width: 1536
   image_height: 1024
+  video: /assets/videos/publications/nbt-2025-allocar-nkt-explainer.mp4
+  video_caption: "58-second English research explainer: how one cord-blood donor can supply allogeneic CAR-NKT cells through a feeder-free culture, with preclinical anti-tumor results."
   image_alt: "Cord-blood stem and progenitor cells become allogeneic CAR-NKT cells through a six-week culture. Single-cell and methylation analyses explain effector and memory states and low immune-marker expression, supported by functional tests and preclinical myeloma results."
   summary: >-
     A feeder-free, clinically guided process turns blood stem and progenitor cells into IL-15-enhanced allogeneic
