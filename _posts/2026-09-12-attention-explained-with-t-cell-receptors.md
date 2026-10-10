@@ -314,6 +314,11 @@ The complete code, with every output, is also available as a notebook: [transfor
 
 Here `B` is the batch size and `L` the sequence length. The paper's base model uses $$d_{model}=512$$, 8 heads, $$d_{ff}=2048$$ and 6 layers in each stack.
 
+![Fig. 8. The whole encoder–decoder. Each dashed box is one layer, repeated N times; the encoder's output feeds every decoder layer through cross-attention](/assets/img/notebook/transformer/fig8_architecture.png)
+
+*Fig. 8. The whole encoder–decoder. Each dashed box is one layer, repeated N times; the encoder's output feeds every decoder layer through cross-attention*
+{: .muted}
+
 ### 10.2 Positional encoding
 
 Attention by itself is blind to order: shuffle the residues and every output is shuffled the same way. The original Transformer adds a fixed pattern of sines and cosines to each embedding:
@@ -346,6 +351,11 @@ class PositionalEncoding(nn.Module):
         return self.dropout(x + self.pe[:, : x.size(1)])
 ```
 
+![Fig. 9. The sinusoidal positional encoding as a heatmap (left) and three of its dimensions as waves (right)](/assets/img/notebook/transformer/fig9_positions.png)
+
+*Fig. 9. The sinusoidal positional encoding as a heatmap (left) and three of its dimensions as waves (right)*
+{: .muted}
+
 Two implementation notes. The table is stored with `register_buffer`, not `nn.Parameter`: it is saved with the model and moves to the GPU with it, but the optimizer never changes it. And the embeddings are multiplied by $$\sqrt{d_{model}}$$ before the positions are added (Section 10.6), so that the position signal, which lives in $$[-1, 1]$$, does not drown out the token signal.
 
 ```text
@@ -377,6 +387,11 @@ def scaled_dot_product_attention(Q, K, V, mask=None, dropout=None):
 ```
 
 Multi-head attention runs that formula in several smaller subspaces at once. The trick is a reshape, not a loop: with $$d_{model}=512$$ and 8 heads, each head works in $$d_k=512/8=64$$ dimensions, so the total cost matches a single 512-dimensional head.
+
+![Fig. 10. One projection per role, split into 8 slices of 64; every head attends on its own slice, then the slices are put back together](/assets/img/notebook/transformer/fig10_multihead.png)
+
+*Fig. 10. One projection per role, split into 8 slices of 64; every head attends on its own slice, then the slices are put back together*
+{: .muted}
 
 ```text
 input             (B, L, 512)
@@ -433,6 +448,11 @@ class PositionwiseFeedForward(nn.Module):
 Every sub-layer, attention or feed-forward, is wrapped the same way: a residual shortcut adds the input back, and LayerNorm rescales each position's vector to mean 0 and variance 1 (then applies a learned scale $$\gamma$$ and shift $$\beta$$). The shortcut gives gradients a direct path through deep stacks; the normalization keeps the numbers in a stable range. LayerNorm, unlike BatchNorm, normalizes each position on its own, so it does not care about batch size or sequence length.
 
 $$\text{Post-LN (paper):}\ \ \mathbf{x}\leftarrow\mathrm{LN}\big(\mathbf{x}+\mathrm{Sublayer}(\mathbf{x})\big)\qquad\text{Pre-LN (ESM-2, GPT-2):}\ \ \mathbf{x}\leftarrow\mathbf{x}+\mathrm{Sublayer}\big(\mathrm{LN}(\mathbf{x})\big)$$
+
+![Fig. 11. Post-LN, as in the paper and these notes, and Pre-LN, as in ESM-2 (Section 6)](/assets/img/notebook/transformer/fig11_norm.png)
+
+*Fig. 11. Post-LN, as in the paper and these notes, and Pre-LN, as in ESM-2 (Section 6)*
+{: .muted}
 
 Pre-LN trains more stably in very deep stacks and needs little or no warm-up, which is why most modern models use it.
 
@@ -548,6 +568,11 @@ The decoder is trained with **teacher forcing**: it is shown the correct output 
 | **Target** | **C** | **A** | **S** | **S** | **I** | … |
 
 On its own, the shift is not enough, because self-attention could still peek at later inputs. The **causal mask** forbids that: row $$i$$ of the lower-triangular matrix lets position $$i$$ see positions $$0\ldots i$$ only, exactly the $$M$$ of Section 7. A **padding mask** hides the filler tokens that make sequences of different lengths fit in one batch. At inference time there is no target, so the decoder starts from `<bos>`, picks the most likely token, appends it and repeats until it writes `<eos>` (greedy decoding; beam search keeps several candidates instead of one).
+
+![Fig. 12. Top: teacher forcing, where the decoder input is the target shifted one step right. Bottom: the causal and padding masks (green = may attend)](/assets/img/notebook/transformer/fig12_masks.png)
+
+*Fig. 12. Top: teacher forcing, where the decoder input is the target shifted one step right. Bottom: the causal and padding masks (green = may attend)*
+{: .muted}
 
 ```python
 # 8. The full model, masks and greedy decoding -----------------------------------------
@@ -697,6 +722,13 @@ output: FYQEYSSRISSAC
 
 After about four minutes on a CPU, the model reverses 999 of 1,000 sequences it has never seen, including our CDR3β. The loss levels off near 0.6 rather than 0 because of label smoothing: even a perfect prediction is scored against a target that is only 90% sure.
 
+![Fig. 13. Left: the training loss. Right: the trained model's cross-attention while it writes the reversed CDR3β](/assets/img/notebook/transformer/fig13_training.png)
+
+*Fig. 13. Left: the training loss. Right: the trained model's cross-attention while it writes the reversed CDR3β*
+{: .muted}
+
+Fig. 13 opens the trained model up. In the second decoder layer, cross-attention lines up along an anti-diagonal: to write the k-th letter of the answer, the decoder puts on average 95% of its attention on the k-th letter from the end of the source. Nobody wrote that rule into the model; it found it from examples. This is the same mechanism a translation model uses to align words, and a TCR–peptide model to align residues.
+
 The training tricks from the paper, in one place:
 
 | Trick | What it does |
@@ -710,4 +742,4 @@ The training tricks from the paper, in one place:
 
 ---
 
-*The toy weights are set by hand so that each head is easy to read; trained models learn theirs from data. The cross-attention map in Fig. 6 is illustrative. ESM-2 probabilities are renormalized over the 20 standard amino acids. Figures were drawn with [Excalidraw](https://excalidraw.com); the editable sources open directly on excalidraw.com: [Fig. 1](/assets/img/notebook/transformer/fig1_vectors.excalidraw), [Fig. 2](/assets/img/notebook/transformer/fig2_qk.excalidraw), [Fig. 3](/assets/img/notebook/transformer/fig3_steps.excalidraw), [Fig. 4](/assets/img/notebook/transformer/fig4_heads.excalidraw), [Fig. 5](/assets/img/notebook/transformer/fig5_block.excalidraw), [Fig. 6](/assets/img/notebook/transformer/fig6_family.excalidraw), [Fig. 7](/assets/img/notebook/transformer/fig7_esm.excalidraw). The video was animated with Remotion and narrated with a synthetic (text-to-speech) voice. Music: “Deliberate Thought” by Kevin MacLeod ([incompetech.com](https://incompetech.com)), licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).*
+*The toy weights are set by hand so that each head is easy to read; trained models learn theirs from data. The cross-attention map in Fig. 6 is illustrative. ESM-2 probabilities are renormalized over the 20 standard amino acids. Figures were drawn with [Excalidraw](https://excalidraw.com); the editable sources open directly on excalidraw.com: [Fig. 1](/assets/img/notebook/transformer/fig1_vectors.excalidraw), [Fig. 2](/assets/img/notebook/transformer/fig2_qk.excalidraw), [Fig. 3](/assets/img/notebook/transformer/fig3_steps.excalidraw), [Fig. 4](/assets/img/notebook/transformer/fig4_heads.excalidraw), [Fig. 5](/assets/img/notebook/transformer/fig5_block.excalidraw), [Fig. 6](/assets/img/notebook/transformer/fig6_family.excalidraw), [Fig. 7](/assets/img/notebook/transformer/fig7_esm.excalidraw), [Fig. 8](/assets/img/notebook/transformer/fig8_architecture.excalidraw), [Fig. 9](/assets/img/notebook/transformer/fig9_positions.excalidraw), [Fig. 10](/assets/img/notebook/transformer/fig10_multihead.excalidraw), [Fig. 11](/assets/img/notebook/transformer/fig11_norm.excalidraw), [Fig. 12](/assets/img/notebook/transformer/fig12_masks.excalidraw), [Fig. 13](/assets/img/notebook/transformer/fig13_training.excalidraw). Fig. 13 uses the real attention weights of the model trained in Section 10.9. The video was animated with Remotion and narrated with a synthetic (text-to-speech) voice. Music: “Deliberate Thought” by Kevin MacLeod ([incompetech.com](https://incompetech.com)), licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).*
