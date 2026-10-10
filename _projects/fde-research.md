@@ -2,9 +2,9 @@
 title: "FDE Research"
 description: "Nine agent skills behind one entry that turn a vague enterprise AI request into research findings, a business proposal, a technical design and a delivery plan with quotation."
 lede: "Nine agent skills behind one entry point that turn a vague enterprise AI request into a project plan you can defend: evidence first, human sign-off last."
-order: 4
+order: 1
 channel: code
-period: "2026"
+period: "May 2026 – Oct 2026"
 role: "Author and maintainer"
 keywords: [Enterprise AI]
 stack: [Agent Skills, Claude Code, Python, Markdown]

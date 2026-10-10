@@ -2,7 +2,7 @@
 title: "Full-Chain Development Skills"
 description: "Twenty-one open-source agent skills that take a software project from idea to release through eleven gated stages."
 lede: "Twenty-one open-source agent skills that walk a project from idea to release — research, PRD, spec, design, test-driven build, and retrospective — with real stop points."
-order: 3
+order: 4
 channel: code
 period: "2026"
 role: "Author and maintainer"

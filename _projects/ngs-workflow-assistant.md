@@ -2,7 +2,7 @@
 title: "NGS Intelligent Workflow Assistant"
 description: "An AI agent that lets bench scientists run TCR and antibody sequencing pipelines on a SLURM cluster through natural-language chat."
 lede: "An AI agent that lets bench scientists run TCR and antibody sequencing pipelines on a shared HPC cluster by describing what they need in plain language."
-order: 1
+order: 2
 channel: code
 period: "Mar – Aug 2026"
 role: "Architect and lead developer"

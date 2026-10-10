@@ -3,7 +3,7 @@ title: "TCR Pathology Classifier"
 description: "A fine-tuned ESM2 protein language model that prioritizes disease-reactive T-cell receptors from sequence; 35% of model-picked clones validated in the lab."
 lede: "A protein language model that ranks T-cell receptors by the disease they likely recognize, so the lab screens a short list instead of a whole repertoire."
 cv_lede: "A deep learning model that ranks T-cell receptors by the disease they are likely associated with, so the lab screens a short list instead of a whole repertoire."
-order: 2
+order: 3
 channel: merge
 period: "Sep 2025 – Mar 2026"
 role: "Built it end to end: data, modeling, deployment, and validation"
