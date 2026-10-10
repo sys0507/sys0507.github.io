@@ -10,8 +10,8 @@ keywords: [Enterprise AI]
 stack: [Agent Skills, Claude Code, Python, Markdown]
 status: "Public on GitHub. All rights reserved; no open-source license is granted."
 cover: /assets/img/projects/fde-research.png
-cover_alt: "Hand-drawn graphic: Sentence to plan. Nine agent skills behind the /fde-research entry run from discovery, baseline and diagnosis through AI scenarios, an optional prototype, business proposal and readiness check to architecture and quotation, with human sign-off gates, a loop that sends conflicts back, and four deliverables produced from one vague sentence."
-cover_caption: "Sentence to plan: nine skills, human sign-off gates, and conflicts that flow back instead of being cut."
+cover_alt: "Hand-drawn trail map titled Fog to blueprint: a vague request in a cloud, then a path through eight numbered stones for the nine skills, starting at the /fde-research signpost, with an optional prototype detour, orange human sign-off flags, a dashed loop where conflicts flow back, and four deliverables at the summit."
+cover_caption: "Fog to blueprint: nine skills, human sign-off flags, and conflicts that flow back instead of being cut."
 thumb: /assets/img/projects/fde-research-thumb.webp
 thumb_alt: "Project card graphic: an open binder of research findings, AI scenarios and technical architecture beside interviews, documents and process data, with tabs for research findings, AI business proposal, technical design, and delivery plan and quotation."
 repo: "https://github.com/sys0507/fde-research"
