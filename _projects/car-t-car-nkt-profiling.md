@@ -2,7 +2,7 @@
 title: "CAR-T vs. CAR-NKT in solid tumors"
 description: "Spatiotemporal single-cell profiling of CAR-T and stem cell-derived CAR-NKT cells in solid tumors, published in Signal Transduction and Targeted Therapy (2026)."
 lede: "Following two cell therapies through tissues and time to learn why one of them does better in solid tumors — and which checkpoint each one needs."
-order: 4
+order: 5
 channel: merge
 period: "2022 – 2026"
 role: "Co-first author; led the single-cell and transcriptomic analyses"
