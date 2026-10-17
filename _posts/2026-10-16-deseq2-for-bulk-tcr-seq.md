@@ -45,11 +45,11 @@ DESeq2 addresses each of these: size factors handle depth and composition, the d
 
 **Then sum them.** Technical replicates measure the same cells twice. Treating them as independent samples (pseudoreplication) doubles n without adding biological information and makes p-values far too small. Sum the two libraries per sample, so DESeq2 sees 6 samples: 3 donors × 2 conditions.
 
-**But first, use them to measure technical noise.** For every sample and gene, compute $$\log_2(\text{prep 1}/\text{prep 2})$$ on CPM. With 6 samples × 48 genes this gives 288 differences (Fig. 2). Their middle 95% runs from −0.23 to +0.24, so we set the **noise floor** at N = 0.24 log2, about an 18% change. A change smaller than this cannot be told apart from library-prep and PCR noise.
+**But first, use them to measure technical noise.** For every sample and gene, compute $$\log_2(\text{prep 1}/\text{prep 2})$$ on CPM. With 6 samples × 48 genes this gives 288 differences (Fig. 1). Their middle 95% runs from −0.23 to +0.24, so we set the **noise floor** at N = 0.24 log2, about an 18% change. A change smaller than this cannot be told apart from library-prep and PCR noise.
 
-![Histogram of 288 replicate differences](/assets/img/notebook/deseq2/fig2_noise_floor.png)
+![Histogram of 288 replicate differences](/assets/img/notebook/deseq2/fig1_noise_floor.png)
 
-*Fig. 2. Technical noise: the log2 ratio between the two libraries of each sample, for all 6 samples × 48 genes (simulated). The shaded middle 95% defines the noise floor.*
+*Fig. 1. Technical noise: the log2 ratio between the two libraries of each sample, for all 6 samples × 48 genes (simulated). The shaded middle 95% defines the noise floor.*
 {: .muted}
 
 Two notes on the noise floor:
@@ -61,9 +61,9 @@ Two notes on the noise floor:
 
 ## 3. Inside DESeq2: five steps
 
-![What DESeq2 does in five steps](/assets/img/notebook/deseq2/fig1_deseq2_steps.png)
+![What DESeq2 does in five steps](/assets/img/notebook/deseq2/fig2_deseq2_steps.png)
 
-*Fig. 1. The five automatic steps from raw counts to log2FC and padj, written for non-statisticians (simulated example). Step 1 makes samples comparable, step 2 provides the yardstick, step 3 estimates the effect, step 4 asks whether it beats the yardstick, step 5 corrects for testing 48 genes.*
+*Fig. 2. The five automatic steps from raw counts to log2FC and padj, written for non-statisticians (simulated example). Step 1 makes samples comparable, step 2 provides the yardstick, step 3 estimates the effect, step 4 asks whether it beats the yardstick, step 5 corrects for testing 48 genes.*
 {: .muted}
 
 ### Step 1. Put samples on the same scale (size factors)
@@ -115,7 +115,7 @@ PyDESeq2 stores coefficients in `dds.varm["LFC"]` on the **natural log** scale; 
 
 The Wald statistic divides the change by its uncertainty, and the p-value comes from the standard normal distribution:
 
-$$z=\frac{\text{log2FC}}{\text{SE}}, \qquad p = 2\,\bigl(1-\Phi(|z|)\bigr)$$
+$$z=\frac{\text{log2FC}}{\text{SE}}, \qquad p = 2\,\bigl(1-\Phi(\lvert z\rvert)\bigr)$$
 
 For TRBV9, z = −5.20 / 0.135 = −38.5, so p is effectively zero. For TRBV12-3, z = −4.52 and p = 6.2 × 10⁻⁶.
 
@@ -239,11 +239,11 @@ I first predicted that the last pattern could be significant and was wrong. DESe
 
 ### How does z become a p-value?
 
-Through the standard normal distribution: $$p=2(1-\Phi(|z|))$$. |z| = 1.96 gives p = 0.05, |z| = 2.58 gives 0.01. With 48 tests and two significant genes, the BH line sits at |z| ≈ 3.08.
+Through the standard normal distribution: $$p=2(1-\Phi(\lvert z\rvert))$$. An absolute z of 1.96 gives p = 0.05, and 2.58 gives 0.01. With 48 tests and two significant genes, the BH line sits at an absolute z of about 3.08.
 
 ### How do I compute the noise floor across three donors?
 
-Pool all log2(prep 1/prep 2) values: 6 samples × 48 genes = 288 differences. Plot the histogram and take the middle 95% (Fig. 2). Per-pair 95th percentiles of |difference| ranged from 0.21 to 0.26, so pooling is reasonable. Calling it a "95% CI" is wrong; it is a reference range for single measurements.
+Pool all log2(prep 1/prep 2) values: 6 samples × 48 genes = 288 differences. Plot the histogram and take the middle 95% (Fig. 1). Per-pair 95th percentiles of the absolute difference ranged from 0.21 to 0.26, so pooling is reasonable. Calling it a "95% CI" is wrong; it is a reference range for single measurements.
 
 ### A gene drops 33%: is that CAR-T or noise?
 
@@ -344,7 +344,7 @@ Stakeholders want two answers: "was the target removed?" and "was anything else 
 - **Lead with the question, then the number.** "TRBV9 fell 97% in every donor (padj < 0.0001): depleted." "One other V gene, TRBV12-3, fell about 32%; it passes our pre-set rules for a candidate and we will validate it by flow."
 - **Translate log2FC into percent**, using the table in section 5.
 - **Explain padj in one line:** "how sure we are that the change is bigger than normal donor-to-donor variation, after allowing for testing 48 genes".
-- **Use the analogies in Fig. 1:** size factors as qPCR's housekeeping gene; dispersion as an assay's CV; the paired model as each mouse measured before and after dosing; the Wald test as a signal against its FMO background; multiple testing as buying 48 lottery tickets.
+- **Use the analogies in Fig. 2:** size factors as qPCR's housekeeping gene; dispersion as an assay's CV; the paired model as each mouse measured before and after dosing; the Wald test as a signal against its FMO background; multiple testing as buying 48 lottery tickets.
 - **Report absolute frequencies too.** log2FC is relative; "TRBV9 went from 5.4% to 0.16% of reads" is the most direct evidence of depletion.
 - **Use TRBV9 as a yardstick.** An off-target gene reaching 70–100% of TRBV9's effect suggests cross-recognition; 10–20% is more likely indirect or compositional.
 - **Pre-register the rules.** Write the noise floor, thresholds and donor rules into the methods before looking at results.
@@ -391,4 +391,4 @@ A defensible methods sentence:
 
 *Notes.* All data are simulated for teaching (seed 1): 48 TRBV genes, 3 donors, 2 conditions, 2 technical-replicate libraries per sample, multinomial sampling of 0.8–2.5 million reads per library, donor-to-donor variation (SD 0.35 on the log scale), culture drift (0.10) and library-prep noise (0.06); TRBV9 retained at 3% and TRBV12-3 at 70% in CAR-T. The per-donor inconsistency examples were made by editing one gene's simulated shifts and re-running the model; the gene X / gene Y and low-count tables are hand calculations. The runnable workflow is [deseq2-tcrseq-workflow.py](/assets/notebooks/deseq2-tcrseq-workflow.py). Fig. 3 and the graphical abstract were drawn with [Excalidraw](https://excalidraw.com); the editable sources: [abstract](/assets/img/notebook/deseq2/abstract.excalidraw), [Fig. 3](/assets/img/notebook/deseq2/fig3_decision.excalidraw). The video was animated with Remotion and narrated with a synthetic (text-to-speech) voice. Music: “Deliberate Thought” by Kevin MacLeod ([incompetech.com](https://incompetech.com)), licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Created by Miao Li.*
 
-*References.* Love MI, Huber W, Anders S (2014). Moderated estimation of fold change and dispersion for RNA-seq data with DESeq2. *Genome Biology* 15:550. Muzellec B, Teleńczuk M, Cabeli V, Andreux M (2023). PyDESeq2: a python package for bulk RNA-seq differential expression analysis. *Bioinformatics*. Benjamini Y, Hochberg Y (1995). Controlling the false discovery rate. *J. R. Stat. Soc. B* 57:289–300. Zhu A, Ibrahim JG, Love MI (2019). Heavy-tailed prior distributions for sequence count data (apeglm). *Bioinformatics* 35:2084–2092. Malik A et al. (2022). [Distorted TCR repertoires define multisystem inflammatory syndrome in children](https://journals.plos.org/plosone/article?id=10.1371%2Fjournal.pone.0274289). *PLOS ONE* 17:e0274289. Pollastro S et al. (2021). [Characterization and monitoring of antigen-responsive T cell clones using T cell receptor gene expression analysis](https://www.frontiersin.org/journals/immunology/articles/10.3389/fimmu.2020.609624/pdf). *Front. Immunol.* 11:609624. Cha E et al. (2014). [Improved survival with T cell clonotype stability after anti–CTLA-4 treatment in cancer patients](https://escholarship.org/uc/item/4b5914dw). *Sci. Transl. Med.* 6(238). Buytenhuijs F et al. (2025). [Differential T cell receptor clonotype abundance analysis with similarity-based counts weighting](https://www.biorxiv.org/content/10.1101/2025.03.28.645951v2.full). bioRxiv. [IgGeneUsage](https://rdrr.io/bioc/IgGeneUsage), Bioconductor.*
+*References.* Love MI, Huber W, Anders S (2014). Moderated estimation of fold change and dispersion for RNA-seq data with DESeq2. *Genome Biology* 15:550. Muzellec B, Teleńczuk M, Cabeli V, Andreux M (2023). PyDESeq2: a python package for bulk RNA-seq differential expression analysis. *Bioinformatics*. Benjamini Y, Hochberg Y (1995). Controlling the false discovery rate. *J. R. Stat. Soc. B* 57:289–300. Zhu A, Ibrahim JG, Love MI (2019). Heavy-tailed prior distributions for sequence count data (apeglm). *Bioinformatics* 35:2084–2092. Malik A et al. (2022). [Distorted TCR repertoires define multisystem inflammatory syndrome in children](https://journals.plos.org/plosone/article?id=10.1371%2Fjournal.pone.0274289). *PLOS ONE* 17:e0274289. Pollastro S et al. (2021). [Characterization and monitoring of antigen-responsive T cell clones using T cell receptor gene expression analysis](https://www.frontiersin.org/journals/immunology/articles/10.3389/fimmu.2020.609624/pdf). *Front. Immunol.* 11:609624. Cha E et al. (2014). [Improved survival with T cell clonotype stability after anti–CTLA-4 treatment in cancer patients](https://escholarship.org/uc/item/4b5914dw). *Sci. Transl. Med.* 6(238). Buytenhuijs F et al. (2025). [Differential T cell receptor clonotype abundance analysis with similarity-based counts weighting](https://www.biorxiv.org/content/10.1101/2025.03.28.645951v2.full). bioRxiv. [IgGeneUsage](https://rdrr.io/bioc/IgGeneUsage), Bioconductor.
