@@ -1,7 +1,8 @@
 ---
 title: "What is a virtual cell? Foundation models, perturbation models, and drug discovery"
-description: "A narrated video and a short illustrated learning note: what a virtual cell is, how single-cell foundation models learn the map of cell states, how perturbation models (scGen, CPA, GEARS, CellFlow, State, X-Cell) learn the moves, where they help drug discovery, why simple baselines and metrics matter, and my take on where the field is going."
+description: "An 8-minute narrated video and a short illustrated learning note: what a virtual cell is, how single-cell foundation models learn the map of cell states, how perturbation models (scGen, CPA, GEARS, CellFlow, State, X-Cell) learn the moves, where they help drug discovery, why simple baselines and metrics matter, and my take on where the field is going."
 format: video
+filters: [note]   # also listed under Notes
 tags: [virtual cell, single-cell, foundation models, perturbation, drug discovery, explainer]
 math: true
 video:
